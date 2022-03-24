@@ -68,6 +68,11 @@ wButton.forEach(item => {
 
     })
 
+    /* ----- Cerrar selector al clickear un botón ----- */
+
+    wSel.classList.remove("open");
+    wSelButton.classList.remove("open");
+
   })
 
 })
