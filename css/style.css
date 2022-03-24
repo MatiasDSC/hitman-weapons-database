@@ -271,12 +271,6 @@ main{
 
     }
 
-    #wSelButton:hover ~ #wSel, #wSel:hover{ /* Para abrir el wSel por hover o mantenerlo abierto mientras se usa */
-
-        width: calc(300px + 0.35em); /* 0.35em son de la scrollbar */
-
-   }
-
         .category{
             
             /* Ancho igual al del selector en sí */
