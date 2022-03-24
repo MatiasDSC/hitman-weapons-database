@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitman 3 - Sniper Rifles</title>
+    <link rel="shortcut icon" href="css/resources/shapes/sniper_icon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- w = weapon :) -->
+
+<body>
+    <header>
+        <!-- izquierda -->
+        <div id="lContainer">
+            <!-- collapsable1 = desaparece a menos de 850px ||| collapsable2 = desaparece a ~ menos de 500px (le puse el menor valor posible en que no se rompía el header cuando el h1 era el más largo aka "assault rifles") -->
+            <div id="h3Logo" class="collapsable2"> <!-- ambas imágenes del logo -->
+                <a href="index.html">
+                    <img id="collapsable1" src="css/resources/h3logo_og.png" alt="Hitman 3 logo"> <!-- "HITMAN" -->
+                    <img src="css/resources/h3icon_og.png" alt="Hitman 3 icon"> <!-- "III" -->
+                </a>
+            </div>
+            <div id="vBreakline" class="collapsable2"></div>
+            <div id="h1Box"><h1>SNIPER RIFLES</h1></div>
+        </div>
+
+        <!-- derecha -->
+        <img id="menuIcon" src="css/resources/shapes/return_to_menu.png" alt="Menu icon">
+    </header>
+
+    <main>
+        <button id="wSelButton" class="wSelMenu">
+            <img src="css/resources/shapes/arrow.png" alt="Open weapon selector">
+        </button>
+
+        <div id="wSel" class="wSelMenu">
+            <div class="category">
+                <h2>Sieger</h2>
+                <ul type="none">
+                    <li><button>SIEGER 300</button></li>
+                    <li><button>SIEGER 300 GHOST</button></li>
+                    <li><button>SIEGER 300 TACTICAL</button></li>
+                    <li><button>SIEGER 300 ADVANCED</button></li>
+                    <li><button>SIEGER 300 VIPER</button></li>
+                    <li><button>WHITE SIEGER 300</button></li>
+                </ul>
+                <hr>
+            </div>
+
+            <div class="category">
+                <h2>Jaeger</h2>
+                <ul type="none">
+                    <li><button>JAEGER 7</button></li>
+                    <li><button>JAEGER 7 LANCER</button></li>
+                    <li><button>JAEGER 7 COVERT</button></li>
+                    <li><button>JAEGER 7 TUATARA</button></li>
+                    <li><button>JAEGER 7 TIGER</button></li>
+                    <li><button>JAEGER 7 GREEN EYE</button></li>
+                </ul>
+                <hr>
+            </div>
+
+            <div class="category">
+                <h2>Druzhina</h2>
+                <ul type="none">
+                    <li><button>DRUZHINA 34</button></li>
+                    <li><button>DRUZHINA 34 DTI</button></li>
+                    <li><button>DRUZHINA 34 ICA ARCTIC</button></li>
+                </ul>
+                <hr>
+            </div>
+            
+            <div class="category">
+                <h2>Others</h2>
+                <ul type="none">
+                    <li><button>HACKL LEVIATHAN SNIPER RIFLE COVERT</button></li>
+                    <li><button>ICA WOODSMAN RIFLE COVERT</button></li>
+                    <li><button>ICA BARTOLI WOODSMAN HUNTING RIFLE COVERT</button></li>
+                    <li><button>THE GOLDEN DRAGON</button></li>
+                    <li><button>THE MAJESTIC</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wInfo">
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);">
+                        <div class="prevButton">aaa</div>
+                        <div class="nextButton">aaa</div>
+                        <div class="perksTooltip"></div>
+                        <div class="wAmmo"></div>
+                    </div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 GHOST -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_ghost.png);"></div>
+                    <div class="text">
+                        <h3>SIEGER 300 GHOST</h3>
+                        <p class="acq">
+                            Unlocked by completing The Cheveyo Calibration escalation in A House Built on Sand.
+                        </p>
+                        <p class="desc">
+                            "A unique ICA variant of the Sieger 300. All-black bullpup rifle designed for high-precision, high-damage long-range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 extended_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 subsonic">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 TACTICAL -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_tactical.png);"></div>
+                    <div class="text">
+                        <h3>SIEGER 300 TACTICAL</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 10 in Isle of Sgàil.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements. Modded to have higher acccuracy."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 ADVANCED -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_advanced.png);"></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 20 in Hokkaido.
+                        </p>
+                        <p class="desc">
+                            "A modern ICA variant of the Sieger 300. Bullpup rifle designed for high precision damage at far ranges."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 VIPER -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_viper.png);"></div>
+                    <div class="text">
+                        <h3>SIEGER 300 VIPER</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Mendoza.
+                        </p>
+                        <p class="desc">
+                            "A "Viper" variant of the Sieger 300. A classic bullpup sniper rifle designed for precise, medium-range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WHITE SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/white_sieger_300.png);"></div>
+                    <div class="text">
+                        <h3>WHITE SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked by completing The Proloff Parable escalation in Untouchable.
+                        </p>
+                        <p class="desc">
+                            "Arctic variant of the Sieger 300. Designed for high-precision , high damage engagements at all ranges."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 extended_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 subsonic">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JAEGER 7 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/jaeger_7.png);"></div>
+                    <div class="text">
+                        <h3>JAEGER 7</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 5 in Paris.
+                        </p>
+                        <p class="desc">
+                            "A modern marksman's rifle. Highly accurate and modular, allows for extensive customization."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 scout">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                         <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIEGER 300 -->
+            <div class="w">
+                <div class="content">
+                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);"><!--<img src="css/resources/weapons/snipers/sieger_300.png" alt="Sieger 300">--></div>
+                    <div class="text">
+                        <h3>SIEGER 300</h3>
+                        <p class="acq">
+                            Unlocked after reaching mastery level 15 in Colorado.
+                        </p>
+                        <p class="desc">
+                            "A classic bullpup sniper rifle designed for precise, medium range engagements."
+                        </p>
+                    </div>
+                    <div class="perksFlexContainer">
+                        <div class="perks">
+                            <div class="perk perk1 versatile_scope">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk2 suppressor">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk3 marksman">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk4">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk5">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                            <div class="perk perk6">
+                                <div class="perkIcon"></div>
+                                <div class="perkInfo">
+                                    <h4 class="perkTitle"></h4>
+                                    <p class="perkDesc"></p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/scripts.js"></script> <!-- al fondo para que cargue todo lo anterior antes de que se ejecute cualquier script -->
+</body>
+</html>

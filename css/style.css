@@ -1,0 +1,780 @@
+div#temporal_flexContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+}
+
+a#temporal{
+                   
+    flex-grow: 0;
+
+    /* Fondo y letra */
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: Helvetica;
+    font-size: 18px;
+    letter-spacing: 2px;
+
+    /* Posición del texto dentro del botón */
+    line-height: 20px;
+    text-align: left;
+    padding: 5px 10px;
+
+    /* 300px del ancho máx del selector menos 25px de padding de la lista menos 10px que hacen de margen derecho */
+    width: fit-content;
+    
+    /* Cosas de botones */
+    cursor: pointer;
+
+}
+
+    a#temporal:hover{
+
+        /* Cambios de fondo y letra */
+        background-color: white;
+        color: black;
+    
+    }
+    
+    a#temporal:active{
+    
+        /* Cambios de fondo y letra */
+        background-color: red;
+        color: black;
+    
+    }
+
+
+
+body{
+
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    font-family: helvetica;
+    color: white;
+    letter-spacing: 2px;
+    margin: 0 0 0 0;
+
+}
+
+a{
+
+    text-decoration: none;
+    white-space: nowrap;
+
+}
+
+header{
+
+    background-color: black;
+
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+    #lContainer{
+
+        flex: 1 1 auto;
+
+        display: flex;
+        justify-content: flex-start;
+
+    }
+
+        #h3Logo{
+
+            padding: 7px;
+
+        }
+
+            #h3Logo img{
+
+                height: 45px;
+
+            }
+
+        #vBreakline{
+
+            width: 2px;
+            height: 46px;
+            background-color: white;
+            margin: 7px;
+
+        }
+
+        #h1Box{
+
+            white-space: nowrap;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+            h1{
+
+                font-size: 36px;
+                margin: 0 14px;
+
+                word-wrap: normal;
+
+            }
+
+        #collapsable1{
+
+            width: 312px;
+            transition: width 1s;
+
+            object-fit: cover;
+
+        }
+
+        @media only screen and (max-width: 850px){
+
+            #collapsable1{
+
+                width: 0;
+
+            }
+
+        }
+
+        @media only screen and (max-width: 502px){
+
+            .collapsable2{
+
+                display: none;
+
+            }
+
+        }
+
+    #menuIcon{
+
+        flex: 0 1 auto;
+
+        padding: 13px 14.5px;
+
+    }
+
+    #menuIcon:active{
+
+        padding: 7.5px;
+        content: url(resources/shapes/return_to_menu_hover.png);
+
+    }
+
+main{
+
+    /* El fondo facherazo */
+    background-color: black;
+    background-image: url(resources/fondo_completo_editado.png); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Hago que cubra todo el viewport menos el header, aka todo el body, sin importar sus dimensiones (el "bg-size: cover;" se encarga del ancho) */
+    height: calc(100vh - 60px);
+
+}
+
+    #wSel{ /* Selector de armas de la izquierda */
+
+        /* Fondo */
+        background-color: rgba(0, 0, 0, 0.95);
+
+        /* Ancho y alto */
+        width: 0px; /* 300px + 0.35em cuando está abierto, los em son de la scrollbar */
+            transition: width 0.5s;
+        height: calc(100vh - 85px - 2px); /* Los 2px son para que se vea el borde del wInfo */
+
+        /* Overflow p/controlar qué scrollbars aparecen */
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        /* Posición */
+        position: fixed;
+            top: 71px; /* Son 70px más 1 para que se vea el borde del wInfo */
+            left: 25px; /* Un pixel coincide con el border del wSelButton p/mantener el hover sobre alguno de los dos en todo momento */
+
+        /* Flex p/ordenar las categorías dentro del selector */
+        display: flex;
+        flex-direction: column;
+
+        /* Aparece por sobre y detrás de */
+        z-index: 300;
+
+    }
+
+    #wSelButton{
+
+        /* Alto y ancho */
+        width: 15px;
+        height: calc(100vh - 85px);
+        
+        /* Le quito el padding con el que venía por defecto para poder después posicionar fácil la flechita con un porcentaje */
+        padding: 0;
+
+        /* Posición */
+        position: fixed;
+            top: 70px;
+            left: 10px;
+
+        /* Color */
+        background-color: black;
+        border: none;
+        outline: 1px solid white;
+
+        /* Cosas de botones */
+        cursor: pointer;
+
+        z-index: 1500;
+
+    }
+
+        #wSelButton:active, #wSelButton:hover{
+
+            background-color: rgb(24, 24, 24);
+            outline: 2px solid white;
+
+        }
+
+        #wSelButton img{ /* Flechita adentro del botón */
+
+            /* Alto, ancho y posición de la flechita */
+            width: 60%;
+            margin-left: 0;
+
+        }
+
+    #wSel.open{ /* Para abrir el wSel por click c/JS */
+
+        width: calc(300px + 0.35em);
+
+    }
+
+    #wSelButton.open{
+
+        background-color: rgb(24, 24, 24);
+        outline: 2px solid white;
+
+    }
+
+    #wSelButton:hover ~ #wSel, #wSel:hover{ /* Para abrir el wSel por hover o mantenerlo abierto mientras se usa */
+
+        width: calc(300px + 0.35em); /* 0.35em son de la scrollbar */
+
+   }*/
+
+        .category{
+            
+            /* Ancho igual al del selector en sí */
+            width: 100%;
+
+            z-index: 300;
+        
+        }
+
+            h2{ /* Nombre de cada categoría de arma dentro del selector */
+                
+
+                font-variant: small-caps; /* Versalitas master race \(* v *)/ */
+                letter-spacing: 2px; /* Para asemejarlo al logo, 3px es mucho */
+
+                /* Para que cuando cierra el menú no se rompa el texto */
+                text-overflow: none;
+
+                /* Ancho del 90% del selector */
+                width: 90%;
+
+                /* Separado a izquierda por un 5% del ancho del selector, pero con un valor fijo para que no varíe a medida que se lo cierra */
+                margin-left: 15px;
+
+                white-space: nowrap;
+                overflow: hidden;
+            
+            }
+            
+                ul{
+                
+                    /* Posición */
+                    padding-inline-start: 25px; /* Regula el espacio que tabula a los elementos de la lista aka el padding a izquierda de la lista */
+
+                }
+            
+                    li{
+                        
+                        /* Para dar un espaciado entre botones */
+                        padding-bottom: 5px;
+                    
+                    }
+
+                        .category button{
+                        
+                            /* Fondo y letra */
+                            background-color: transparent;
+                            border: none;
+                            color: white;
+                            font-family: Helvetica;
+                            font-size: 18px;
+                            letter-spacing: 2px;
+
+                            /* Posición del texto dentro del botón */
+                            line-height: 20px;
+                            text-align: left;
+                            padding-bottom: 5px;
+                            padding-top: 5px;
+                        
+                            /* 300px del ancho máx del selector menos 25px de padding de la lista menos 10px que hacen de margen derecho */
+                            width: 265px;
+                            
+                            /* Cosas de botones */
+                            cursor: pointer;
+                        
+                        }
+                        
+                            .category button:hover{
+
+                                /* Cambios de fondo y letra */
+                                background-color: white;
+                                color: black;
+                            
+                            }
+                            
+                            .category button:active{
+                            
+                                /* Cambios de fondo y letra */
+                                background-color: red;
+                                color: black;
+                            
+                            }
+
+                            .category button.selected{ /* Para el JavaScript */
+
+                                background-color: red;
+                                color: white;
+
+                            }
+
+        #wSel hr{
+
+            /* Ancho y alto */
+            width: 240px;
+            height: 2px;
+            
+            /* Posición */
+            margin: 5px 30px;
+
+            /* Color */
+            background-color: white;
+            border: none;
+
+        }
+
+        #wSel::-webkit-scrollbar{ /* Scrollbar del wSel */
+
+            width: 0.35em;
+            position: absolute;
+    
+        }
+        
+            #wSel::-webkit-scrollbar-track{
+        
+                background-color: rgba(255, 255, 255, 0.4); /* Color de la guía */
+        
+            }
+            
+            #wSel::-webkit-scrollbar-thumb{
+        
+                background-color: rgba(255, 0, 0, 0.7); /* Color del slider*/
+                box-shadow: inset 0 0 0.2em rgba(0, 0, 0, 0.4); /* Decoración*/
+        
+            }
+
+            body::-webkit-scrollbar{
+        
+                display: none;
+        
+            }
+
+    /*WEAPON INFO TABLE*/
+
+    .wInfo{
+
+        /*background-color: rgba(0, 0, 0, 0.3);*/
+
+        width: calc(100vw - 0.25em - 35px);
+        height: calc(100vh - 85px);
+        
+        position: fixed;
+            top: 70px;
+            left: 25px;
+            bottom: 0px;
+
+        z-index: 150;
+
+    }
+    
+        .w{
+
+            width: inherit;
+            height: inherit;
+
+            position: inherit;
+
+            display: none;
+            opacity: 0;
+            transition: opacity 0.15s;
+
+        }
+
+        .w.selected{
+
+            display: block;
+            opacity: 100%;
+
+            height: calc(100vh - 85px);
+
+            overflow-y: auto;
+            overflow-x: hidden;
+
+        }
+
+            .w .content{
+
+                background-color: rgba(51, 51, 51, 0.3);
+                height: 100%;
+
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-areas:
+                    'img perks perks'
+                    'text text text';
+
+            }
+
+                .content .img{
+
+                    grid-area: img;
+
+                    border-top: 1px solid white;
+                    border-right: 1px solid white;
+                    border-bottom: 1px solid white;
+
+                    background-size: cover;
+                    background-position: center;
+                    box-shadow: inset 0 0 20px 5px black;
+
+                    overflow: hidden;
+
+                    display: grid;
+                    grid-template-rows: 1fr 3fr 40px;
+                    grid-template-columns: 1fr 6fr 2fr 1fr;
+                    grid-template-areas:
+                        'prevButton . wAmmo nextButton'
+                        'prevButton . . nextButton'
+                        'prevButton perksTooltip perksTooltip nextButton';
+
+                }
+
+                    .img .prevButton{
+
+                        grid-area: prevButton;
+                        width: 100%;
+                        height: 100%;
+
+                    }
+
+                    .img .nextButton{
+
+                        grid-area: nextButton;
+                        width: 100%;
+                        height: 100%;
+
+                    }
+
+                    .img .wAmmo{
+
+                        grid-area: wAmmo;
+                        width: 100%;
+                        height: 100%;
+
+                    }
+
+                    .img .perksTooltip{
+
+                        grid-area: perksTooltip;
+                        width: 100%;
+                        height: 100%;
+
+                    }
+
+                .content .text{
+
+                    grid-area: text;
+
+                    border-right: 1px solid white;
+                    border-bottom: 1px solid white;
+
+                    overflow-wrap: normal;
+
+                    padding: 1rem;
+
+                    overflow: auto;
+
+                }
+
+                    .text h3{
+
+                        font-size: 32px;
+                        line-height: 1.5em;
+                        margin: 0;
+                        margin-bottom: 0.25em;
+
+
+                    }
+
+                    .acq{
+
+                        line-height: 1.5em;
+                        font-size: 20px;
+
+                        margin: 0;
+
+                    }
+
+                    .desc{
+
+                        background-color: rgba(85, 85, 85, 0.3);
+                        color: lightgray;
+                        font-style: italic;
+                        line-height: 1.25em;
+                        font-size: 20px;
+                        text-align: center;
+
+                        margin: 0;
+                        margin-top: 0.8em;
+                        padding: 0.5em;
+
+                    }
+
+                .content .perksFlexContainer{
+
+                    border-top: 1px solid white;
+                    border-right: 1px solid white;
+                    border-bottom: 1px solid white;
+
+                    grid-area: perks;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    justify-content: center;
+
+                    padding: 10px;
+
+                }
+
+                    .content .perks{
+
+                        flex-grow: 0;
+                        width: 100%;
+
+                        align-self: center;
+                        justify-self: center;
+
+                        display: grid;
+                        grid-template-rows: max-content max-content max-content;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-areas:
+                            'perk1 perk2'
+                            'perk3 perk4'
+                            'perk5 perk6';
+
+                    }
+
+                        .perk{
+
+                            margin: 10px 20px;
+
+                            display: flex;
+                            flex-direction: row;
+
+                            justify-content: center;
+                            align-content: center;
+                            
+                        }
+
+                            .perkIcon{
+
+                                flex: 0 0 56px;
+
+                                min-height: 56px;
+                                min-width: 56px;
+
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+
+                            }
+
+                            .perkInfo{
+
+                                flex: 1 1 auto;
+
+                                display: grid;
+                                grid-template-rows: 1fr 1fr;
+                                
+                                grid-template-areas:
+                                    'perkTitle'
+                                    'perkDesc';
+
+                            }
+
+                                .perkInfo h4{
+
+                                    display: flex;
+                                    align-items: flex-end;
+                                    justify-content: flex-start;
+
+                                    font-size: 20px;
+                                    line-height: 1.2em;
+
+                                    margin: 0;
+                                    margin-left: 1em;
+                                    margin-bottom: 0.1em;
+
+                                }
+
+                                .perkInfo p{
+
+                                    display: flex;
+                                    align-items: flex-start;
+                                    justify-content: flex-start;
+
+                                    font-size: 16px;
+                                    line-height: 1.5em;
+
+                                    margin: 0;
+                                    margin-left: 1.25em;
+                                    margin-top: 0.125em;
+                                    
+                                }
+                    
+                @media only screen and (max-width: 1400px) {
+                    
+                    .w .content{
+                        
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-areas:
+                        'img perks'
+                        'text text';
+                        
+                    }
+
+                    .perkInfo h4{
+
+                        align-items: center;
+                        
+                    }
+
+                    .perkInfo p{
+
+                        display: none;
+                        
+                    }
+                    
+                    .perkInfo{
+                        
+                        grid-template-rows: 1fr;
+                        
+                        grid-template-areas:
+                        'perkTitle';
+                        
+                    }
+                    
+                    .content .perks{
+                        
+                        grid-template-rows: max-content max-content max-content;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-areas:
+                        'perk1 perk2'
+                        'perk3 perk4'
+                        'perk5 perk6';
+                        
+                    }
+                    
+                }
+
+                @media only screen and (max-height: 600px) {
+
+                    .w .content{
+                    
+                        grid-template-columns: 2fr 1fr 1fr 1fr;
+                        grid-template-areas:
+                            'img perks perks perks'
+                            'img text text text';
+    
+                    }
+                    
+                }
+                
+                @media only screen and (max-width: 1000px) {
+
+                    .w .content{
+                        
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-template-areas:
+                        'img img perks'
+                        'text text text';
+                        
+                    }
+
+                    .perkInfo{
+
+                        display: none;
+
+                    }
+                    
+                }
+                
+                @media only screen and (max-width: 650px) {
+
+                    .w .content{
+                        
+                        grid-template-rows: 2fr 2fr 3fr 4fr;
+                        grid-template-columns: 1fr;
+                        grid-template-areas:
+                        'img'
+                        'img'
+                        'perks'
+                        'text';
+                        
+                    }
+                    
+                    .content .perks{
+                        
+                        border-top: none;
+                        
+                        display: grid;
+                        grid-template-rows: max-content max-content;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-template-areas:
+                        'perk1 perk2 perk3'
+                        'perk4 perk5 perk6';
+                        
+                    }
+                    
+                }
