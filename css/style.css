@@ -160,18 +160,29 @@ header{
 
         }
 
-    #menuIcon{
+    #menuButton{
+
+        max-height: 100%;
+        width: min-content;
 
         flex: 0 1 auto;
 
-        padding: 13px 14.5px;
+    }
+
+    #menuIcon{
+
+        max-height: 50%;
+        object-position: center;
+
+        padding: 25% 15px;
 
     }
 
     #menuIcon:active{
 
-        padding: 7.5px;
-        content: url(resources/shapes/return_to_menu_hover.png);
+        max-height: 68%;
+        padding: 16.5% 8px 15.5%;
+        content: url(resources/icons/return_to_menu_hover.png);
 
     }
 
@@ -179,7 +190,7 @@ main{
 
     /* El fondo facherazo */
     background-color: black;
-    background-image: url(resources/fondo_completo_editado.png); 
+    background-image: url(resources/background/fondo_completo_editado.png); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -413,7 +424,7 @@ main{
         
         position: fixed;
             top: 70px;
-            left: 25px;
+            left: 26px;
             bottom: 0px;
 
         z-index: 150;
@@ -469,13 +480,13 @@ main{
 
                     background-size: cover;
                     background-position: center;
-                    box-shadow: inset 0 0 20px 5px black;
+                    box-shadow: inset 0 0 20px black;
 
                     overflow: hidden;
 
                     display: grid;
-                    grid-template-rows: 1fr 3fr 40px;
-                    grid-template-columns: 1fr 6fr 2fr 1fr;
+                    grid-template-rows: 1fr 3fr 1fr;
+                    grid-template-columns: 2fr 10fr 6fr 2fr;
                     grid-template-areas:
                         'prevButton . wAmmo nextButton'
                         'prevButton . . nextButton'
@@ -483,37 +494,215 @@ main{
 
                 }
 
-                    .img .prevButton{
+                    .prevButton{
 
                         grid-area: prevButton;
                         width: 100%;
                         height: 100%;
+                        
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
 
                     }
 
-                    .img .nextButton{
+                        .prevButton:hover{
+
+                            background-image: linear-gradient(to right, rgb(0, 0, 0, 0.5), transparent);
+                            background-position-x: -2px;
+                            background-repeat: no-repeat;
+                            cursor: pointer;
+
+                        }
+
+                        .prevButton:active{
+
+                            background-image: linear-gradient(to right, rgb(0, 0, 0, 0.6), transparent);
+                            background-color: rgba(128, 128, 128, 0.5);
+                            box-shadow: inset 0 0 5px 2px black;
+                            background-position-x: 0;
+
+                        }
+                        
+                        .prevButton:active i{
+                            
+                            color: lightgray;
+                            position: relative;
+                            top: 2px;
+                            left: 2px;
+                            
+                        }
+
+                    .nextButton{
 
                         grid-area: nextButton;
                         width: 100%;
                         height: 100%;
 
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
                     }
 
-                    .img .wAmmo{
+                        .nextButton:hover{
+
+                            background-image: linear-gradient(to left, rgb(0, 0, 0, 0.5), transparent);
+                            background-position-x: 2px;
+                            background-repeat: no-repeat;
+                            cursor: pointer;
+
+                        }
+
+                        .nextButton:active{
+
+                            background-image: linear-gradient(to left, rgb(0, 0, 0, 0.6), transparent);
+                            background-color: rgba(128, 128, 128, 0.5);
+                            box-shadow: inset 0 0 5px 2px black;
+                            background-position-x: 0;
+
+                        }
+
+                        .nextButton:active i{
+
+                            color: lightgray;
+                            position: relative;
+                                top: 2px;
+                                right: 2px;
+
+                        }
+                        
+                    .prevButton.first, .nextButton.last{
+
+                        color: rgba(0, 0, 0, 0.5);
+
+                    }
+
+                        .prevButton.first:hover, .nextButton.last:hover{
+
+                            cursor: default;
+                            background-image: none;
+
+                        }
+
+                        .prevButton.first:active{
+
+                            background-image: none;
+                            background-color: transparent;
+                            box-shadow: none;
+                            background-position-x: -2px;
+
+                        }
+
+                        .nextButton.last:active{
+
+                            background-image: none;
+                            background-color: transparent;
+                            box-shadow: none;
+                            background-position-x: 2px;
+
+                        }
+
+                        
+                        .prevButton.first:active i, .nextButton.last:active i{
+
+                            color: rgba(0, 0, 0, 0.5);
+                            position: relative;
+                                top: 0;
+                                left: 0;
+
+
+                        }
+
+                    .wAmmo{
 
                         grid-area: wAmmo;
                         width: 100%;
                         height: 100%;
 
+                        font-family: Public Sans;
+
                     }
 
-                    .img .perksTooltip{
+                        .wAmmoFlexContainer{
+
+                            width: 90%;
+                            height: 60%;
+
+                            display: flex;
+
+                            align-items: flex-end;
+                            justify-content: left;
+
+                            padding: 5% 20%;
+
+                        }
+
+                            .magazine{
+
+                                font-size: 32px;
+                                margin: 0;
+                                line-height: 1em;
+                                font-weight: bold;
+
+                            }
+
+                            .reserve{
+
+                                font-size: 20px;
+                                margin: 0;
+                                margin-bottom: 2px;
+                                line-height: 1em;
+                                font-weight: 400;
+
+                            }
+
+                    .perksTooltip{
 
                         grid-area: perksTooltip;
+
+                        display: grid;
+                        grid-template-rows: 20px 1fr;
+                                
+                        grid-template-areas:
+                            'perkTooltipTitle'
+                            'perkTooltipDesc';
+
+                        grid-gap: 4px;
+
                         width: 100%;
                         height: 100%;
 
                     }
+
+                        .perksTooltip h4{
+
+                            grid-area: perkTooltipTitle;
+
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: flex-start;
+
+                            font-size: 20px;
+                            font-variant: small-caps;
+
+                            margin: 0;
+
+                        }
+
+                        .perksTooltip span{
+
+                            grid-area: perkTooltipDesc;
+
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+
+                            font-size: 16px;
+
+                            margin: 0;
+
+                        }
 
                 .content .text{
 
@@ -645,6 +834,7 @@ main{
 
                                     font-size: 20px;
                                     line-height: 1.2em;
+                                    font-variant: small-caps;
 
                                     margin: 0;
                                     margin-left: 1em;
@@ -710,6 +900,12 @@ main{
                         
                     }
                     
+                    .content .img{
+                        
+                        grid-template-columns: 2fr 8fr 8fr 2fr;
+                        
+                    }
+                    
                 }
 
                 @media only screen and (max-height: 600px) {
@@ -721,6 +917,12 @@ main{
                             'img perks perks perks'
                             'img text text text';
     
+                    }
+
+                    .content .img{
+                        
+                        grid-template-columns: 2fr 8fr 8fr 2fr;
+                        
                     }
                     
                 }
@@ -772,3 +974,65 @@ main{
                     }
                     
                 }
+
+/* Perk images */
+
+.versatile_scope .perkIcon{
+
+    background-image: url(resources/icons/versatile_scope.png);
+
+}
+
+.suppressor .perkIcon{
+
+    background-image: url(resources/icons/suppressor.png);
+
+}
+
+.marksman .perkIcon{
+
+    background-image: url(resources/icons/marksman.png);
+
+}
+
+.extended_scope .perkIcon{
+
+    background-image: url(resources/icons/extended_scope.png);
+
+}
+
+.subsonic .perkIcon{
+
+    background-image: url(resources/icons/subsonic.png);
+
+}
+
+.scout .perkIcon{
+
+    background-image: url(resources/icons/scout.png);
+
+}
+
+.variable_scope .perkIcon{
+
+    background-image: url(resources/icons/variable_scope.png);
+
+}
+
+.piercing .perkIcon{
+
+    background-image: url(resources/icons/piercing.png);
+
+}
+
+.extended_magazine .perkIcon{
+
+    background-image: url(resources/icons/extended_magazine.png);
+
+}
+
+.rate_of_fire .perkIcon{
+
+    background-image: url(resources/icons/rate_of_fire.png);
+
+}
