@@ -12,9 +12,9 @@ wSelButton.onclick = function() {
 
 /* ----- Cerrar weapon selector haciendo click afuera ----- */
 
-document.addEventListener('click', function clickOutsideWSelMenu(e) {
+document.addEventListener('click', function clickOutsideWSelMenu(event) {
    
-    if (!wSel.contains(e.target) && !wSelButton.contains(e.target)) {
+    if (!wSel.contains(event.target) && !wSelButton.contains(event.target)) {
 
       wSel.classList.remove("open");
       wSelButton.classList.remove("open");
@@ -77,28 +77,120 @@ wButton.forEach(item => {
 
 })
 
-/* ----- Tooltip al hoverear una perk ----- */
+/* ----- Prev/Next weapon ----- */
 
-/* Versatile scope */
+const prevButton = Array.from(document.getElementsByClassName('prevButton'));
+const nextButton = Array.from(document.getElementsByClassName('nextButton'));
 
-/*const vertical_scopeIcon = document.querySelectorAll(".versatile_scope .perkIcon")
+prevButton.forEach(item => {
 
-function displayTooltip(icon) {
+    item.addEventListener('click', event => {
 
+        if(wButtonSelected[0] - 1 === -1){
 
+        }
+        else{
 
-}
+            wButtonSelected.splice(0, 1, wButtonSelected[0] - 1);
 
-vertical_scopeIcon.forEach(item => {
+        }
 
-  item.addEventListener('mouseover', )
+        wButton.forEach(item => {
+
+            if(wButtonSelected[0] === wButton.indexOf(item)) {
+
+                item.classList.add('selected');
+
+            }
+            else{
+
+                item.classList.remove('selected');
+
+            }
+
+        })
+
+        weapons.forEach(item => {
+
+            if(wButtonSelected[0] === weapons.indexOf(item)) {
+      
+              item.classList.add("selected");
+      
+            }
+      
+            else {
+      
+              item.classList.remove("selected");
+      
+            }
+      
+          })
+
+    })
 
 })
 
-}*/
+nextButton.forEach(item => {
 
+    item.addEventListener('click', event => {
 
-/* ----- Asignación de perks al cargar la página ----- */
+        if(wButtonSelected[0] >= wButton.length - 1){ 
+
+        } //Ej: en snipers, hay 19 armas, y por ende 19 botones. Entonces, wButton tiene length de 20. Cuando estoy en la última arma, el wButtonSelected está en 19, y entonces sólo cuando esa ficha está abierta el wButtonSelected[0] de 19 va a ser mayor o igual (va a ser igual) que el wButton.length de 20-1, y el botón para pasar a la siguiente arma va a dejar de andar
+        else{
+
+            wButtonSelected.splice(0, 1, wButtonSelected[0] + 1);
+
+        } //Si no pasa lo explicado en el ejemplo anterior, significa que no estoy en la última ficha, y entonces aumento el wButtonSelected[0] en 1 para luego seleccionar la ficha siguiente
+
+        wButton.forEach(item => {           // Marco como seleccionado al botón que me indica el valor del wButtonSelected[0], haya cambiado o no
+
+            if(wButtonSelected[0] === wButton.indexOf(item)) {
+
+                item.classList.add('selected');
+
+            }
+            else{
+
+                item.classList.remove('selected');
+
+            }
+
+        })
+
+        weapons.forEach(item => {           // Muestro la info asociada al botón seleccionado, igual que como cuando elijo haciendo click en los botones "wButton"
+
+            if(wButtonSelected[0] === weapons.indexOf(item)) {
+      
+              item.classList.add("selected");
+      
+            }
+      
+            else {
+      
+              item.classList.remove("selected");
+      
+            }
+      
+          })
+
+    })
+
+})
+
+const versatile_scopeIcon = document.querySelectorAll(".versatile_scope .perkIcon");
+const suppressorIcon = document.querySelectorAll(".suppressor .perkIcon");
+const marksmanIcon = document.querySelectorAll(".marksman .perkIcon");
+const extended_scopeIcon = document.querySelectorAll(".extended_scope .perkIcon");
+const subsonicIcon = document.querySelectorAll(".subsonic .perkIcon");
+const scoutIcon = document.querySelectorAll(".scout .perkIcon");
+const variable_scopeIcon = document.querySelectorAll(".variable_scope .perkIcon");
+const piercingIcon = document.querySelectorAll(".piercing .perkIcon");
+const extended_magazineIcon = document.querySelectorAll(".extended_magazine .perkIcon");
+const rate_of_fireIcon = document.querySelectorAll(".rate_of_fire .perkIcon");
+
+/* ----- Asignación de perks al cargar la página -----*/
+// Acá sólo el texto, ya que de esta forma me ahorro tener que cargarlo en cada elemento para cada arma. Las imágenes están en css ya que con asignar la clase al elemento alcanza!
 
 window.addEventListener('DOMContentLoaded', function() {
 
@@ -108,13 +200,6 @@ window.addEventListener('DOMContentLoaded', function() {
       for(var i = 0; i < x.length; i++){
       x[i].innerText="Versatile Scope";    // Change the content
       x[i].setAttribute("title", "Three levels of zoom.");
-      }
-
-  x = document.querySelectorAll(".versatile_scope .perkIcon");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].style.backgroundImage="url(icons/versatile_scope.png)";
-      x[i].setAttribute("title", "Versatile Scope - Three levels of zoom.");
       }
 
   x = document.querySelectorAll(".versatile_scope .perkInfo p");
@@ -132,13 +217,6 @@ window.addEventListener('DOMContentLoaded', function() {
       x[i].setAttribute("title", "Quiet, reduced range.");
       }
 
-  x = document.querySelectorAll(".suppressor .perkIcon");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].style.backgroundImage="url(icons/suppressor.png)";
-      x[i].setAttribute("title", "Suppressor - Quiet, reduced range.");
-      }
-
   x = document.querySelectorAll(".suppressor .perkInfo p");
 
       for(var i = 0; i < x.length; i++){
@@ -152,13 +230,6 @@ window.addEventListener('DOMContentLoaded', function() {
       for(var i = 0; i < x.length; i++){
       x[i].innerText="Marksman";
       x[i].setAttribute("title", "Improve your aim by slowing down time.");
-      }
-
-  x = document.querySelectorAll(".marksman .perkIcon");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].style.backgroundImage="url(icons/marksman.png)";
-      x[i].setAttribute("title", "Marksman - Improve your aim by slowing down time.");
       }
 
   x = document.querySelectorAll(".marksman .perkInfo p");
@@ -176,13 +247,6 @@ window.addEventListener('DOMContentLoaded', function() {
       x[i].setAttribute("title", "Four levels of zoom.");
       }
 
-  x = document.querySelectorAll(".extended_scope .perkIcon");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].style.backgroundImage="url(icons/extended_scope.png)";
-      x[i].setAttribute("title", "Extended Scope - Four levels of zoom.");
-      }
-
   x = document.querySelectorAll(".extended_scope .perkInfo p");
 
       for(var i = 0; i < x.length; i++){
@@ -196,13 +260,6 @@ window.addEventListener('DOMContentLoaded', function() {
       for(var i = 0; i < x.length; i++){
       x[i].innerText="Subsonic";
       x[i].setAttribute("title", "Very quiet, reduced damage.");
-      }
-
-  x = document.querySelectorAll(".subsonic .perkIcon");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].style.backgroundImage="url(icons/subsonic.png)";
-      x[i].setAttribute("title", "Subsonic - Very quiet, reduced damage.");
       }
 
   x = document.querySelectorAll(".subsonic .perkInfo p");
@@ -220,17 +277,278 @@ window.addEventListener('DOMContentLoaded', function() {
       x[i].setAttribute("title", "Can be aimed quickly, increased rate of fire.");
       }
 
-  x = document.querySelectorAll(".scout .perkIcon");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].style.backgroundImage="url(icons/scout.png)";
-      x[i].setAttribute("title", "Scout - Can be aimed quickly, increased rate of fire.");
-      }
-
   x = document.querySelectorAll(".scout .perkInfo p");
 
       for(var i = 0; i < x.length; i++){
       x[i].innerText="Can be aimed quickly, increased rate of fire.";;
       }
+
+
+  /* Variable Scope */
+  x = document.querySelectorAll(".variable_scope .perkInfo h4");
+
+      for(var i = 0; i < x.length; i++){
+      x[i].innerText="Variable Scope";
+      x[i].setAttribute("title", "Two levels of zoom.");
+      }
+
+  x = document.querySelectorAll(".variable_scope .perkInfo p");
+
+      for(var i = 0; i < x.length; i++){
+      x[i].innerText="Two levels of zoom.";;
+      }
+
+
+  /* Piercing */
+  x = document.querySelectorAll(".piercing .perkInfo h4");
+
+      for(var i = 0; i < x.length; i++){
+      x[i].innerText="Piercing";
+      x[i].setAttribute("title", "Rounds fired will penetrate bodies.");
+      }
+
+  x = document.querySelectorAll(".piercing .perkInfo p");
+
+      for(var i = 0; i < x.length; i++){
+      x[i].innerText="Rounds fired will penetrate bodies.";;
+      }
+
+
+  /* Extended magazine */
+  x = document.querySelectorAll(".extended_magazine .perkInfo h4");
+
+      for(var i = 0; i < x.length; i++){
+      x[i].innerText="Extended Magazine";
+      x[i].setAttribute("title", "Extra ammunition in the magazine, based on weapon type.");
+      }
+
+  x = document.querySelectorAll(".extended_magazine .perkInfo p");
+
+      for(var i = 0; i < x.length; i++){
+      x[i].innerText="Extra ammunition in the magazine, based on weapon type.";;
+      }
+
+
+  /* Rate of fire */
+  x = document.querySelectorAll(".rate_of_fire .perkInfo h4");
+
+      for(var i = 0; i < x.length; i++){
+      x[i].innerText="Rate of Fire";
+      x[i].setAttribute("title", "Increased rate of fire.");
+      }
+
+  x = document.querySelectorAll(".rate_of_fire .perkInfo p");
+
+      for(var i = 0; i < x.length; i++){
+      x[i].innerText="Increased rate of fire.";;
+      }
+
+})
+
+
+/* ----- Tooltip al hoverear una perk ----- */
+
+const perksTooltipsTitle = document.querySelectorAll(".perksTooltip h4");
+const perksTooltipsDesc = document.querySelectorAll(".perksTooltip span");
+
+console.log(perksTooltipsTitle);
+
+/* Versatile scope */
+
+versatile_scopeIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Versatile Scope";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Three levels of zoom.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Suppressor */
+
+suppressorIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Suppressor";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Quiet, reduced range.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Marksman */
+
+marksmanIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Marksman";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Improve your aim by slowing down time.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Extended scope */
+
+extended_scopeIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Extended Scope";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Four levels of zoom.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Subsonic */
+
+subsonicIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Subsonic";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Very quiet, reduced damage.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Scout */
+
+scoutIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Scout";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Can be aimed quickly, increased rate of fire.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Variable scope */
+
+variable_scopeIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Variable Scope";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Two levels of zoom.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Piercing */
+
+piercingIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Piercing";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Rounds fired will penetrate bodies.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Extended magazine */
+
+extended_magazineIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Extended Magazine";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Extra ammunition in the magazine, based on weapon type.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
+
+})
+
+/* Rate of fire */
+
+rate_of_fireIcon.forEach(item => {
+
+    item.addEventListener('mouseover', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="Rate of Fire";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="Increased rate of fire.";
+
+    })
+
+    item.addEventListener('mouseout', function() {
+
+        perksTooltipsTitle[wButtonSelected[0]].innerText="";
+        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+
+    })
 
 })
