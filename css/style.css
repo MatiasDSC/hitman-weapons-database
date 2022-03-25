@@ -672,8 +672,12 @@ main{
 
                         grid-gap: 4px;
 
-                        width: 100%;
+                        width: 95%;
                         height: 100%;
+
+                        overflow-x: hidden;
+
+                        margin: 0 2.5%;
 
                     }
 
@@ -696,16 +700,38 @@ main{
 
                             grid-area: perkTooltipDesc;
 
+                            width: 100%;
+
+                            white-space: nowrap;
+                            overflow-x: visible;
+                            scrollbar-width: 0;
+
                             display: flex;
                             align-items: flex-start;
                             justify-content: flex-start;
-
+                            
                             font-size: 16px;
 
                             margin: 0;
                             padding-bottom: 5px;
 
                         }
+
+                            @keyframes autoScroll{
+
+                                0% {margin-left: 0%;}
+                                20% {margin-left: 0%;}
+                                100% {margin-left: -100%;}
+
+                            }
+
+                            .perksTooltip span.animated{
+
+                                -webkit-animation: autoScroll 7s linear 0s infinite normal;
+                                -o-animation: autoScroll 7s linear 0s infinite normal;
+                                animation: autoScroll 7s linear 0s infinite normal;
+
+                            }
 
                 .content .text{
 
