@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitman 3 - Assault Rifles</title>
+    <link rel="shortcut icon" href="css/resources/icons/pistol_icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+
+<!-- w = weapon :) -->
+
+<body>
+    <noscript style="display:flex; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; background-color: black; align-items: center; justify-content: center; font-variant: small-caps;"><img src="css/resources/icons/warning.svg" alt="Warning" style="margin-right: 10px; height: 22px;">This site requires JavaScript to function. Please, enable JavaScript and reload the page.</noscript>
+
+    <header>
+        <!-- izquierda -->
+        <div id="lContainer">
+            <!-- collapsable1 = desaparece a menos de 850px ||| collapsable2 = desaparece a ~ menos de 500px (le puse el menor valor posible en que no se rompía el header cuando el h1 era el más largo aka "assault rifles") -->
+            <div id="h3Logo" class="collapsable2"> <!-- ambas imágenes del logo -->
+                <a href="index.html">
+                    <img id="collapsable1" src="css/resources/logo/h3logo.png" alt="Hitman 3 logo"> <!-- "HITMAN" -->
+                    <img src="css/resources/logo/h3icon.png" alt="Hitman 3 icon"> <!-- "III" -->
+                </a>
+            </div>
+            <div id="vBreakline" class="collapsable2"></div>
+            <div id="h1Box"><h1>Assault Rifles</h1></div>
+        </div>
+
+        <!-- derecha -->
+        <a id="menuButton" href="index.html" title="Return to menu">
+            <img id="menuIcon" src="css/resources/icons/return_to_menu.svg" alt="Menu icon">
+        </a>
+    </header>
+
+    <main>
+        <button id="wSelButton" class="wSelMenu">
+            <img id="wSelArrow" src="css/resources/icons/arrow.svg" alt="Open weapon selector">
+        </button>
+
+        <nav id="wSel">
+            <div class="category">
+                <h2>Nothing here yet</h2>
+                <ul type="none">
+                    <li><button>Nothing here yet</button></li>
+                </ul>
+            </div>
+
+            <hr>
+            
+            <div class="category">
+                <h2>Nothing here yet</h2>
+                <ul type="none">
+                    <li><button>Nothing here yet</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="wInfo">
+
+            <div id="content">
+                <div id="imgContainer">
+                    <img id="img" src="" alt="">
+                </div>
+                <div id="imgHUD">
+                    <button id="prevButton"><img src="css/resources/icons/arrow.svg" alt="previous weapon"></button>
+                    <button id="nextButton"><img src="css/resources/icons/arrow.svg" alt="next weapon"></button>
+                    <div id="perksTooltip">
+                            <h4></h4>
+                            <span></span>
+                    </div>
+                    <div id="additionalInfo">
+                        <div id="extraIndicatorFlexWrapper">
+                            <div id="extraIndicator"><img src="css/resources/icons/perks/none.svg" alt=""><span></span></div>
+                        </div>
+                        <div id="wAmmoFlexWrapper">
+                            <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
+                            <span id="magazine">6</span>
+                            <span id="reserve">/30</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="perksFlexWrapper">
+
+                    <a id="closeButton">
+                        <img id="closeIcon" src="css/resources/icons/cross.svg" alt="close">
+                    </a>
+
+                    <div id="perks">
+                        <div class="perk" id="perk1">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk2">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk3">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk4">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk5">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk6">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ICA19 -->
+                <div class="text first" id="selected">
+                    <h3>Nothing here yet</h3>
+                    <p class="acq">
+                        Nothing here yet.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "Nothing here yet."
+                        </p>
+                    </div>
+                    <span class="magazine">N</span><span class="reserve">/HY</span>
+                </div>
+
+                <!-- ICA19 -->
+                <div class="text last" id="selected">
+                    <h3>Nothing here yet</h3>
+                    <p class="acq">
+                        Nothing here yet.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "Nothing here yet."
+                        </p>
+                    </div>
+                    <span class="magazine">N</span><span class="reserve">/HY</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="scripts/scripts.js"></script> <!-- al fondo para que cargue todo lo anterior antes de que se ejecute cualquier script -->
+</body>
+</html>
