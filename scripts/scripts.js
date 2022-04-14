@@ -483,7 +483,7 @@ for(i = 0; i < perkIcons.length; i++){
 
 }
 
-/* ----- Preloadear las imágenes de las armas ----- */
+/* ----- Preloadear imágenes ----- */
 
 function preloadImage(url){
 
@@ -492,11 +492,35 @@ function preloadImage(url){
 
 }
 
-preloadAuxiliarArray = Array(document.querySelectorAll('.text h3').length);
+// Armas
+preloadWeaponsArray = Array(document.querySelectorAll('.text h3').length);
 
-for (i = 0; i < preloadAuxiliarArray.length; i++) {
+for (i = 0; i < preloadWeaponsArray.length; i++) {
 
-    preloadAuxiliarArray[i] = document.querySelectorAll('.text h3')[i].innerText.toLowerCase().replaceAll(' ', '_').replaceAll('ii', '2').replaceAll('"', '').replaceAll('/', '').replaceAll("'", '')
-    preloadImage('css/resources/weapons/'  +  document.querySelector('h1').innerHTML.toLowerCase().replaceAll(' ', '_')  +  '/'  +  preloadAuxiliarArray[i]  +  '.png')
+    preloadWeaponsArray[i] = document.querySelectorAll('.text h3')[i].innerText.toLowerCase().replaceAll(' ', '_').replaceAll('ii', '2').replaceAll('"', '').replaceAll('/', '').replaceAll("'", '');
+    preloadImage('css/resources/weapons/'  +  document.querySelector('h1').innerHTML.toLowerCase().replaceAll(' ', '_')  +  '/'  +  preloadWeaponsArray[i]  +  '.png');
+
+}
+
+//Perks
+for (i = 0; i < allPerksArrays.length; i++) {
+
+    preloadImage(allPerksArrays[i][2]);
+
+}
+
+//Extras
+for (i = 0; i < allExtrasArrays.length; i++) {
+
+    preloadImage(allExtrasArrays[i][1]);
+
+}
+
+//Otros
+preloadOthersArray = ['css/resources/background/fondo_completo_editado.png', 'css/resources/icons/arrow.svg', 'css/resources/icons/arrow_black.svg', 'css/resources/icons/cross.svg', 'css/resources/icons/cross_black.svg', 'css/resources/icons/return_to_menu.svg', 'css/resources/icons/return_to_menu_hover.svg', 'css/resources/logo/h3icon.png', 'css/resources/logo/h3logo.png']
+
+for (i = 0; i < preloadOthersArray.length; i++) {
+
+    preloadImage(preloadOthersArray[i]);
 
 }
