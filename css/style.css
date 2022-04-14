@@ -81,6 +81,8 @@ body{
         background-color: rgb(165, 0, 0);
         background-image: url(resources/background/fondo_completo_editado.png);
         background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         background-blend-mode: darken;
 
         display: flex;
