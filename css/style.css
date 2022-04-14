@@ -169,11 +169,8 @@ img{
 header{
 
     background-color: black;
-    
-    position: absolute;
 
     height: 60px;
-    width: 100vw;
     
     display: flex;
     justify-content: space-between;
