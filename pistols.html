@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitman 3 - Pistols</title>
+    <link rel="shortcut icon" href="css/resources/icons/pistol_icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+
+<!-- w = weapon :) -->
+
+<body>
+    <noscript style="display:flex; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; background-color: black; align-items: center; justify-content: center; font-variant: small-caps;"><img src="css/resources/icons/warning.svg" alt="Warning" style="margin-right: 10px; height: 22px;">This site requires JavaScript to function. Please, enable JavaScript and reload the page.</noscript>
+
+    <header>
+        <!-- izquierda -->
+        <div id="lContainer">
+            <!-- collapsable1 = desaparece a menos de 850px ||| collapsable2 = desaparece a ~ menos de 500px (le puse el menor valor posible en que no se rompía el header cuando el h1 era el más largo aka "assault rifles") -->
+            <div id="h3Logo" class="collapsable2"> <!-- ambas imágenes del logo -->
+                <a href="index.html">
+                    <img id="collapsable1" src="css/resources/logo/h3logo.png" alt="Hitman 3 logo"> <!-- "HITMAN" -->
+                    <img src="css/resources/logo/h3icon.png" alt="Hitman 3 icon"> <!-- "III" -->
+                </a>
+            </div>
+            <div id="vBreakline" class="collapsable2"></div>
+            <div id="h1Box"><h1>Pistols</h1></div>
+        </div>
+
+        <!-- derecha -->
+        <a id="menuButton" href="index.html" title="Return to menu">
+            <img id="menuIcon" src="css/resources/icons/return_to_menu.svg" alt="Menu icon">
+        </a>
+    </header>
+
+    <main>
+        <button id="wSelButton" class="wSelMenu">
+            <img id="wSelArrow" src="css/resources/icons/arrow.svg" alt="Open weapon selector">
+        </button>
+
+        <nav id="wSel">
+            <div class="category">
+                <h2>ICA19</h2>
+                <ul type="none">
+                    <li><button>ICA19</button></li>
+                    <li><button>ICA19 Black Lily</button></li>
+                    <li><button>ICA19 Chrome</button></li>
+                    <li><button>ICA19 Black Trinity</button></li>
+                    <li><button>ICA19 Red Trinity</button></li>
+                    <li><button>ICA19 White Trinity</button></li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="category">
+                <h2>ICA19 "-baller"</h2>
+                <ul type="none">
+                    <li><button>ICA19 Classicballer</button></li>
+                    <li><button>ICA19 Goldballer</button></li>
+                    <li><button>ICA19 Shortballer</button></li>
+                    <li><button>ICA19 Silverballer</button></li>
+                    <li><button>ICA19 Silverballer Mk II</button></li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="category">
+                <h2>ICA19 F/A</h2>
+                <ul type="none">
+                    <li><button>ICA19 F/A</button></li>
+                    <li><button>ICA19 F/A Stealth</button></li>
+                    <li><button>ICA19 F/A Stealth "Ducky" Edition</button></li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="category">
+                <h2>HWK21</h2>
+                <ul type="none">
+                    <li><button>HWK21</button></li>
+                    <li><button>HWK21 Mk II</button></li>
+                    <li><button>HWK21 Covert</button></li>
+                    <li><button>HWK21 Pale Homemade Silencer</button></li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="category">
+                <h2>Krugermeier</h2>
+                <ul type="none">
+                    <li><button>Krugermeier 2-2</button></li>
+                    <li><button>Krugermeier 2-2 Silver</button></li>
+                    <li><button>Krugermeier 2-2 Dark</button></li>
+                </ul>
+            </div>
+
+            <hr>
+            
+            <div class="category">
+                <h2>Striker</h2>
+                <ul type="none">
+                    <li><button>Striker</button></li>
+                    <li><button>Striker V3</button></li>
+                    <li><button>"El Matador"</button></li>
+                </ul>
+            </div>
+
+            <hr>
+            
+            <div class="category">
+                <h2>Special</h2>
+                <ul type="none">
+                    <li><button>Kalmer 1</button></li>
+                    <li><button>Kalmer 2</button></li>
+                    <li><button>The Taunton Dart Gun</button></li>
+                    <li><button>Sieker 1</button></li>
+                    <li><button>The Serpent's Tongue</button></li>
+                </ul>
+            </div>
+
+            <hr>
+            
+            <div class="category">
+                <h2>Others</h2>
+                <ul type="none">
+                    <li><button>Concept 5</button></li>
+                    <li><button>ICA DTI Stealth</button></li>
+                    <li><button>Custom 5mm</button></li>
+                    <li><button>Custom 5mm DTI</button></li>
+                    <li><button>"Rude Ruby"</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="wInfo">
+
+            <div id="content">
+                <div id="imgContainer">
+                    <img id="img" src="" alt="">
+                </div>
+                <div id="imgHUD">
+                    <button id="prevButton"><img src="css/resources/icons/arrow.svg" alt="previous weapon"></button>
+                    <button id="nextButton"><img src="css/resources/icons/arrow.svg" alt="next weapon"></button>
+                    <div id="perksTooltip">
+                            <h4></h4>
+                            <span></span>
+                    </div>
+                    <div id="additionalInfo">
+                        <div id="extraIndicatorFlexWrapper">
+                            <div id="extraIndicator"><img src="css/resources/icons/perks/none.svg" alt=""><span></span></div>
+                        </div>
+                        <div id="wAmmoFlexWrapper">
+                            <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
+                            <span id="magazine">6</span>
+                            <span id="reserve">/30</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="perksFlexWrapper">
+
+                    <a id="closeButton">
+                        <img id="closeIcon" src="css/resources/icons/cross.svg" alt="close">
+                    </a>
+
+                    <div id="perks">
+                        <div class="perk" id="perk1">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk2">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk3">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk4">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk5">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk6">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ICA19 -->
+                <div class="text suppressor first" id="selected">
+                    <h3>ICA19</h3>
+                    <p class="acq">
+                        Unlocked by default.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide. Low rate of fire with high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+
+                <!-- ICA19 Black Lily -->
+                <div class="text suppressor">
+                    <h3>ICA19 Black Lily</h3>
+                    <p class="acq">
+                        Available by carrying it over from a previous game (Unlocked in Hitman 2 as part of the Executive Pack).
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with suppressor. Low rate of fire with high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+
+                <!-- ICA19 Chrome -->
+                <div class="text suppressor">
+                    <h3>ICA19 Chrome</h3>
+                    <p class="acq">
+                        Unlocked as part of the HITMAN 1 GOTY Edition Access Pass.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with suppressor. Low rate of fire with high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+                
+                <!-- ICA19 Black Trinity -->
+                <div class="text suppressor">
+                    <h3>ICA19 Black Trinity</h3>
+                    <p class="acq">
+                        Unlocked as a Hitman 3 pre-order bonus, as part of the Legacy Pack.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with suppressor. Low rate of fire with high damage. Ultimate Black customization from 2020."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+                
+                <!-- ICA19 Red Trinity -->
+                <div class="text suppressor">
+                    <h3>ICA19 Red Trinity</h3>
+                    <p class="acq">
+                        Unlocked as a Hitman 3 pre-order bonus, as part of the Legacy Pack.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with suppressor. Low rate of fire with very high damage. Crimson Red customization from 2018."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+                
+                <!-- ICA19 White Trinity -->
+                <div class="text suppressor">
+                    <h3>ICA19 White Trinity</h3>
+                    <p class="acq">
+                        Unlocked as a Hitman 3 pre-order bonus, as part of the Legacy Pack.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with suppressor. Low rate of fire with high damage. Premiere White customization from 2016."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+                
+                <!-- ICA19 Classicballer -->
+                <div class="text steady_aim">
+                    <h3>ICA19 Classicballer</h3>
+                    <p class="acq">
+                        Unlocked by completing the Silent Assassin, Suit Only x12 challenge (complete 17 Silent Assassin, Suit Only Challenges)
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Classic custom slide. Low rate of fire with high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+
+                <!-- ICA19 Goldballer -->
+                <div class="text suppressor steady_aim">
+                    <h3>ICA19 Goldballer</h3>
+                    <p class="acq">
+                        Unlocked by completing the Untouchable challenge (complete the mission Untouchable in Carpathian Mountains).
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A golden variant of the ICA19. A tactical pistol. Custom slide with suppressor. Low rate of fire with high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+                
+                <!-- ICA19 Shortballer -->
+                <div class="text suppressor steady_aim">
+                    <h3>ICA19 Shortballer</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 5 in Dartmoor.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with short suppressor. Low rate of fire with high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+                
+                <!-- ICA19 Silverballer -->
+                <div class="text suppressor steady_aim">
+                    <h3>ICA19 Silverballer</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 11 in Paris.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with suppressor. Low rate of fire with high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+                
+                <!-- ICA19 SIlverballer Mk II -->
+                <div class="text suppressor steady_aim">
+                    <h3>ICA19 Silverballer Mk II</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 2 in Mumbai.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with suppressor. Low rate of fire with high damage. This one has the signature Mk II look."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/28</span>
+                </div>
+
+                <!-- ICA19 F/A -->
+                <div class="text full_auto opens_doors">
+                    <h3>ICA19 F/A</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 5 in Marrakesh.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide. Fully-automatic."
+                        </p>
+                    </div>
+                    <span class="magazine">12</span><span class="reserve">/48</span>
+                </div>
+
+                <!-- ICA19 F/A Stealth -->
+                <div class="text full_auto suppressor opens_doors">
+                    <h3>ICA19 F/A Stealth</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 10 in Colorado.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A tactical pistol. Custom slide with suppressor. Fully-automatic."
+                        </p>
+                    </div>
+                    <span class="magazine">12</span><span class="reserve">/48</span>
+                </div>
+
+                <!-- ICA19 F/A Stealth "Ducky" Edition -->
+                <div class="text full_auto suppressor opens_doors">
+                    <h3>ICA19 F/A Stealth "Ducky" Edition</h3>
+                    <p class="acq">
+                        Unlocked by completing the Featured Contracts - Track 2, Tier 5 challenge (complete 40 featured contracts on Hitman 3 locations).
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A customized version of the ICA's preferred tactical pistol, including suppressor. Equipped for subtlety, but decorated for eccentricity."
+                        </p>
+                    </div>
+                    <span class="magazine">12</span><span class="reserve">/48</span>
+                </div>
+                
+                <!-- HWK21 -->
+                <div class="text">
+                    <h3>HWK21</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 7 in Paris.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "This is a breach-and-clear handgun that can quickly take out a number of targets with precise headshots. Great for clearing a room without escalating the fight. It's steady, quick and excellent for close-quarter combat."
+                        </p>
+                    </div>
+                    <span class="magazine">12</span><span class="reserve">/24</span>
+                </div>
+
+                <!-- HWK21 Mk II -->
+                <div class="text">
+                    <h3>HWK21 Mk II</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 7 in Miami.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A modern light pistol. Rapid firing with good magazine capacity. This one has the signature Mk II look."
+                        </p>
+                    </div>
+                    <span class="magazine">12</span><span class="reserve">/24</span>
+                </div>
+
+                <!-- HWK21 Covert -->
+                <div class="text suppressor extended_magazine">
+                    <h3>HWK21 Covert</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Paris.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A covert variant of the HWK21. A modern light pistol. Rapid firing with good magazine capacity."
+                        </p>
+                    </div>
+                    <span class="magazine">20</span><span class="reserve">/40</span>
+                </div>
+
+                <!-- HWK21 Pale Homemade Silencer -->
+                <div class="text suppressor">
+                    <h3>HWK21 Pale Homemade Silencer</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 2 in Carpathian Mountains.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A pale variant of the HWK21. This is a breach-and-clear handgun that can take out a number of targets with precise headshots. Great for clearing a room without escalating the fight. It's steady, quick and excellent for close-quarter combat. Has a homemade sprycan silencer."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/7</span>
+                </div>
+
+                <!-- Krugermeier 2-2 -->
+                <div class="text suppressor subsonic">
+                    <h3>Krugermeier 2-2</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Bangkok.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A low velocity, small caliber pistol. Originally designed for special-forces use and to make as little noise as possible. Ineffective at medium-to-long ranges."
+                        </p>
+                    </div>
+                    <span class="magazine">10</span><span class="reserve">/20</span>
+                </div>
+
+                <!-- Krugermeier 2-2 Silver -->
+                <div class="text suppressor subsonic">
+                    <h3>Krugermeier 2-2 Silver</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 10 in Mendoza.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A silver variant of the Krugermeier 2-2. A low velocity, small caliber pistol. Originally designed for special-forces use and to make as little noise as possible. Ineffective at medium-to-long ranges."
+                        </p>
+                    </div>
+                    <span class="magazine">10</span><span class="reserve">/20</span>
+                </div>
+
+                <!-- Krugermeier 2-2 Dark -->
+                <div class="text suppressor subsonic">
+                    <h3>Krugermeier 2-2 Dark</h3>
+                    <p class="acq">
+                        Unlocked by completing the Arcade - Track 1 challenge (complete any of the following trials in Elusive Target Arcade: The Ellipses, The Codices, The Deceits).
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A dark variant of the Krugermeier 2-2. A low velocity, small caliber pistol. Originally designed for special-forces use and to make as little noise as possible. Ineffective at medium-to-long ranges."
+                        </p>
+                    </div>
+                    <span class="magazine">10</span><span class="reserve">/20</span>
+                </div>
+
+                <!-- Striker -->
+                <div class="text piercing damage opens_doors">
+                    <h3>Striker</h3>
+                    <p class="acq">
+                        Unlocked by completing The Dexter Discordance escalation in Situs Inversus.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A magnum pistol. Body-piercing rounds. Low rate of fire with very high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/7</span>
+                </div>
+
+                <!-- Striker V3 -->
+                <div class="text piercing damage opens_doors">
+                    <h3>Striker V3</h3>
+                    <p class="acq">
+                        Unlocked by completing the Arcade - Track 3 challenge (complete any of the following trials in Elusive Target Arcade: The Quanta, The Indices, The Clutches).
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A magnum pistol. Body piercing rounds. Low rate of fire with very high damage."
+                        </p>
+                    </div>
+                    <span class="magazine">9</span><span class="reserve">/9</span>
+                </div>
+
+                <!-- "El Matador" -->
+                <div class="text piercing damage opens_doors">
+                    <h3>"El Matador"</h3>
+                    <p class="acq">
+                        Unlocked by completing the Escalations - Track 2, Tier 10 challenge (complete 26 escalations on Hitman 2 locations).
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "Rico Delgado's own gun. Body-piercing rounds. Low rate of fire with very high damage"
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/7</span>
+                </div>
+
+                <!-- Kalmer 1 -->
+                <div class="text sedativeP">
+                    <h3>Kalmer 1</h3>
+                    <p class="acq">
+                        Unlocked by completing the Escalations - Track 2, Tier 2 challenge (complete 3 escalations on Hitman 2 locations).
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A South African produced dart gun. Will sedate everyone it hits."
+                        </p>
+                    </div>
+                    <span class="magazine">1</span><span class="reserve">/1</span>
+                </div>
+
+                <!-- Kalmer 2 -->
+                <div class="text sedativeP">
+                    <h3>Kalmer 2</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 5 in Mendoza.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A South African produced dart gun. Will sedate everyone it hits."
+                        </p>
+                    </div>
+                    <span class="magazine">1</span><span class="reserve">/1</span>
+                </div>
+
+                <!-- The Taunton Dart Gun -->
+                <div class="text sedativeP">
+                    <h3>The Taunton Dart Gun</h3>
+                    <p class="acq">
+                        Unlocked by completing the first level in The Satu Mare Delirium escalation in Apex Predator.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A beautiful, classic conceived dart gun, made of rust-proof steel, possibly designed by a young Doctor Ort-Meyer."
+                        </p>
+                    </div>
+                    <span class="magazine">1</span><span class="reserve">/1</span>
+                </div>
+
+                <!-- Sieker 1 -->
+                <div class="text emeticP">
+                    <h3>Sieker 1</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 10 in Haven Island.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A South African produced dart gun. Will transmit an emetic poison to anyone it hits."
+                        </p>
+                    </div>
+                    <span class="magazine">1</span><span class="reserve">/1</span>
+                </div>
+
+                <!-- The Serpent's Tongue -->
+                <div class="text stunning">
+                    <h3>The Serpent's Tongue</h3>
+                    <p class="acq">
+                        Unlocked by completing The Lust Assignation escalation in Apex Predator.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A unique crossbow loaded with blinding darts. The red and black snake motif is a guaranteed conversation starter as long as the other party is not an ophidiophobe."
+                        </p>
+                    </div>
+                    <span class="magazine">1</span><span class="reserve">/1</span>
+                </div>
+
+                <!-- Concept 5 -->
+                <div class="text full_auto opens_doors">
+                    <h3>Concept 5</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 15 in Miami.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "Kronstadt produced firearm. Used to test Kronstadt android systems. With automatic fire and fairly low recoil."
+                        </p>
+                    </div>
+                    <span class="magazine">20</span><span class="reserve">/80</span>
+                </div>
+
+                <!-- ICA DTI Stealth -->
+                <div class="text suppressor">
+                    <h3>ICA DTI Stealth</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 2 in Mendoza.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "An ICA customized, custom-made pistol. Fast fire rate but low accuracy. Comes with a silencer."
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/14</span>
+                </div>
+
+                <!-- Custom 5mm -->
+                <div class="text suppressor frisk_hidden">
+                    <h3>Custom 5mm</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 5 in Hokkaido.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A concealable pistol. Ergonomically designed to pass pat-downs and frisking attempts. Utilizes caseless ammunition and cannot be reloaded while in the field."
+                        </p>
+                    </div>
+                    <span class="magazine">5</span><span class="reserve">/0</span>
+                </div>
+
+                <!-- Custom 5mm DTI -->
+                <div class="text suppressor frisk_hidden">
+                    <h3>Custom 5mm DTI</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 7 in Berlin.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "A DTI variant of the Custom 5mm. A concealable pistol. Ergonomically designed to pass pat-downs and frisking attempts. Utilizes caseless ammunition and cannot be reloaded while in the field."
+                        </p>
+                    </div>
+                    <span class="magazine">5</span><span class="reserve">/0</span>
+                </div>
+
+                <!-- "Rude Ruby" -->
+                <div class="text last">
+                    <h3>"Rude Ruby"</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 15 in Whittleton Creek.
+                    </p>
+                    <div class="descFlexWrapper">
+                        <p class="desc">
+                            "Granny's pink punisher. A custom-made pistol, themed after Granny's favorite color. Fast fire rate but low accuracy"
+                        </p>
+                    </div>
+                    <span class="magazine">7</span><span class="reserve">/14</span>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script src="scripts/scripts.js"></script> <!-- al fondo para que cargue todo lo anterior antes de que se ejecute cualquier script -->
+</body>
+</html>

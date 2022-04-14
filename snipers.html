@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hitman 3 - Sniper Rifles</title>
-    <link rel="shortcut icon" href="css/resources/icons/sniper_icon.png">
+    <link rel="shortcut icon" href="css/resources/icons/sniper_icon.svg">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/f3bad95c2b.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap');
     </style>
@@ -16,6 +15,8 @@
 <!-- w = weapon :) -->
 
 <body>
+    <noscript style="display:flex; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; padding: 20px; z-index: 9999; background-color: black; align-items: center; justify-content: center; font-variant: small-caps;"><img src="css/resources/icons/warning.svg" alt="Warning" style="margin-right: 10px; height: 22px;">This site requires JavaScript to function. Please, enable JavaScript and reload the page.</noscript>
+
     <header>
         <!-- izquierda -->
         <div id="lContainer">
@@ -27,1744 +28,460 @@
                 </a>
             </div>
             <div id="vBreakline" class="collapsable2"></div>
-            <div id="h1Box"><h1>SNIPER RIFLES</h1></div>
+            <div id="h1Box"><h1>Sniper Rifles</h1></div>
         </div>
 
         <!-- derecha -->
         <a id="menuButton" href="index.html" title="Return to menu">
-            <img id="menuIcon" src="css/resources/icons/return_to_menu.png" alt="Menu icon">
+            <img id="menuIcon" src="css/resources/icons/return_to_menu.svg" alt="Menu icon">
         </a>
     </header>
 
     <main>
         <button id="wSelButton" class="wSelMenu">
-            <img src="css/resources/icons/arrow.png" alt="Open weapon selector">
+            <img id="wSelArrow" src="css/resources/icons/arrow.svg" alt="Open weapon selector">
         </button>
 
-        <div id="wSel" class="wSelMenu">
+        <nav id="wSel">
             <div class="category">
                 <h2>Sieger</h2>
                 <ul type="none">
-                    <li><button>SIEGER 300</button></li>
-                    <li><button>SIEGER 300 GHOST</button></li>
-                    <li><button>SIEGER 300 TACTICAL</button></li>
-                    <li><button>SIEGER 300 ADVANCED</button></li>
-                    <li><button>SIEGER 300 VIPER</button></li>
-                    <li><button>SIEGER 300 ARCTIC</button></li>
+                    <li><button>Sieger 300</button></li>
+                    <li><button>Sieger 300 Ghost</button></li>
+                    <li><button>Sieger 300 Tactical</button></li>
+                    <li><button>Sieger 300 Advanced</button></li>
+                    <li><button>Sieger 300 Viper</button></li>
+                    <li><button>Sieger 300 Arctic</button></li>
                 </ul>
-                <hr>
             </div>
+
+            <hr>
 
             <div class="category">
                 <h2>Jaeger</h2>
                 <ul type="none">
-                    <li><button>JAEGER 7</button></li>
-                    <li><button>JAEGER 7 MK II</button></li>
-                    <li><button>JAEGER 7 LANCER</button></li>
-                    <li><button>JAEGER 7 COVERT</button></li>
-                    <li><button>JAEGER 7 TUATARA</button></li>
-                    <li><button>JAEGER 7 "TIGER"</button></li>
-                    <li><button>JAEGER 7 GREEN EYE</button></li>
+                    <li><button>Jaeger 7</button></li>
+                    <li><button>Jaeger 7 Mk II</button></li>
+                    <li><button>Jaeger 7 Lancer</button></li>
+                    <li><button>Jaeger 7 Covert</button></li>
+                    <li><button>Jaeger 7 Tuatara</button></li>
+                    <li><button>Jaeger 7 "Tiger"</button></li>
+                    <li><button>Jaeger 7 Green Eye</button></li>
                 </ul>
-                <hr>
             </div>
+
+            <hr>
 
             <div class="category">
                 <h2>Druzhina</h2>
                 <ul type="none">
-                    <li><button>DRUZHINA 34</button></li>
-                    <li><button>DRUZHINA 34 DTI</button></li>
-                    <li><button>DRUZHINA 34 ICA ARCTIC</button></li>
+                    <li><button>Druzhina 34</button></li>
+                    <li><button>Druzhina 34 DTI</button></li>
+                    <li><button>Druzhina 34 ICA Arctic</button></li>
                 </ul>
-                <hr>
             </div>
+
+            <hr>
             
             <div class="category">
                 <h2>Others</h2>
                 <ul type="none">
-                    <li><button>HACKL LEVIATHAN SNIPER RIFLE COVERT</button></li>
-                    <li><button>HACKL SNIPER RIFLE COVERT "DUCKY" EDITION</button></li>
-                    <li><button>ICA WOODSMAN RIFLE COVERT</button></li>
-                    <li><button>BARTOLI WOODSMAN HUNTING RIFLE</button></li>
-                    <li><button>THE GOLDEN DRAGON</button></li>
-                    <li><button>THE MAJESTIC</button></li>
+                    <li><button>Hackl Leviathan Sniper Rifle Covert</button></li>
+                    <li><button>Hackl Sniper Rifle Covert "Ducky" Edition</button></li>
+                    <li><button>ICA Woodsman Rifle Covert</button></li>
+                    <li><button>Bartoli Woodsman Hunting Rifle</button></li>
+                    <li><button>The Golden Dragon</button></li>
+                    <li><button>The Majestic</button></li>
                 </ul>
             </div>
-        </div>
+        </nav>
 
-        <div class="wInfo">
+        <div id="wInfo">
 
-            <!-- SIEGER 300 | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300.png);">
-                        <div class="prevButton first"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
+            <div id="content">
+                <div id="imgContainer">
+                    <img id="img" src="css/resources/weapons/pistols/concept_5.png" alt="">
+                </div>
+                <div id="imgHUD">
+                    <button id="prevButton"><img src="css/resources/icons/arrow.svg" alt="previous weapon"></button>
+                    <button id="nextButton"><img src="css/resources/icons/arrow.svg" alt="next weapon"></button>
+                    <div id="perksTooltip">
                             <h4></h4>
                             <span></span>
+                    </div>
+                    <div id="additionalInfo">
+                        <div id="extraIndicatorFlexWrapper">
+                            <div id="extraIndicator"><img src="css/resources/icons/perks/none.svg" alt=""><span></span></div>
                         </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/30</span>
+                        <div id="wAmmoFlexWrapper">
+                            <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
+                            <span id="magazine">6</span>
+                            <span id="reserve">/30</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="perksFlexWrapper">
+
+                    <a id="closeButton">
+                        <img id="closeIcon" src="css/resources/icons/cross.svg" alt="close">
+                    </a>
+
+                    <div id="perks">
+                        <div class="perk" id="perk1">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk2">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk3">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk4">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk5">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
+                            </div>
+                        </div>   
+                        <div class="perk" id="perk6">
+                            <img class="perkIcon" src="css/resources/icons/perks/none.svg" alt="">
+                            <div class="perkInfo">
+                                <h4 class="perkTitle"></h4>
+                                <p class="perkDesc"></p>
                             </div>
                         </div>
                     </div>
-                    <div class="text">
-                        <h3>SIEGER 300</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 15 in Colorado.
-                        </p>
+                </div>
+
+                <!-- Sieger 300 -->
+                <div class="text versatile_scope suppressor marksman concealable first" id="selected">
+                    <h3>Sieger 300</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 15 in Colorado.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A classic bullpup sniper rifle designed for precise, medium range engagements."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/30</span>
                 </div>
-            </div>
 
-            <!-- SIEGER 300 GHOST | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_ghost.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/18</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>SIEGER 300 GHOST</h3>
-                        <p class="acq">
-                            Unlocked by completing The Cheveyo Calibration escalation in A House Built on Sand.
-                        </p>
+                <!-- Sieger 300 Ghost -->
+                <div class="text extended_scope suppressor subsonic marksman concealable">
+                    <h3>Sieger 300 Ghost</h3>
+                    <p class="acq">
+                        Unlocked by completing The Cheveyo Calibration escalation in A House Built on Sand.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A unique "Ghost" variant of the Sieger 300. Designed for high precision, high damage engagements at all ranges, and in a modular fashion which allows for extensive customization."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 extended_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 subsonic">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/18</span>
                 </div>
-            </div>
 
-            <!-- SIEGER 300 TACTICAL | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_tactical.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/30</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>SIEGER 300 TACTICAL</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 10 in Isle of Sgàil.
-                        </p>
+                <!-- Sieger 300 Tactical -->
+                <div class="text versatile_scope suppressor marksman concealable">
+                    <h3>Sieger 300 Tactical</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 10 in Isle of Sgàil.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
-                            "A tactical variant of the Sieger 300. Designed for precise, medium range engagements. Modded to have higher acccuracy."
+                            "A tactical variant of the Sieger 300. Designed for precise, medium range engagements. Modded to have higher accuracy."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/30</span>
                 </div>
-            </div>
 
-            <!-- SIEGER 300 ADVANCED | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_advanced.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/36</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>SIEGER 300 ADVANCED</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 20 in Hokkaido.
-                        </p>
+                <!-- Sieger 300 Advanced -->
+                <div class="text versatile_scope suppressor marksman concealable">
+                    <h3>Sieger 300 Advanced</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Hokkaido.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A modern ICA variant of the Sieger 300. Bullpup rifle designed for high precision damage at far ranges."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/36</span>
                 </div>
-            </div>
 
-            <!-- SIEGER 300 VIPER | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_viper.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/30</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>SIEGER 300 VIPER</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 15 in Mendoza.
-                        </p>
+                <!-- Sieger 300 Viper -->
+                <div class="text versatile_scope suppressor marksman concealable">
+                    <h3>Sieger 300 Viper</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 15 in Mendoza.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A "Viper" variant of the Sieger 300. A classic bullpup sniper rifle designed for precise, medium-range engagements."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/30</span>
                 </div>
-            </div>
 
-            <!-- SIEGER 300 ARCTIC | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/sieger_300_arctic.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/12</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>SIEGER 300 ARCTIC</h3>
-                        <p class="acq">
-                            Unlocked by completing The Proloff Parable escalation in Untouchable.
-                        </p>
+                <!-- Sieger 300 Arctic -->
+                <div class="text extended_scope subsonic suppressor marksman concealable">
+                    <h3>Sieger 300 Arctic</h3>
+                    <p class="acq">
+                        Unlocked by completing The Proloff Parable escalation in Untouchable.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "An "Arctic" variant of the Sieger 300. Designed for high-precision , high damage engagements at all ranges."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 extended_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 subsonic">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/12</span>
                 </div>
-            </div>
 
-            <!-- JAEGER 7 | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/jaeger_7.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/18</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>JAEGER 7</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 5 in Paris.
-                        </p>
+                <!-- Jaeger 7 -->
+                <div class="text scout">
+                    <h3>Jaeger 7</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 5 in Paris.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A modern marksman's rifle. Highly accurate and modular, allows for extensive customization."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 scout">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/18</span>
                 </div>
-            </div>
 
-            <!-- JAEGER 7 MK 2 | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/jaeger_7_mk_2.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/18</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>JAEGER 7 MK II</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 5 in Miami.
-                        </p>
+                <!-- Jaeger 7 Mk II -->
+                <div class="text scout">
+                    <h3>Jaeger 7 Mk II</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 5 in Miami.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A modern marksman's rifle. Highly accurate and modular, allowing extensive customization. This one has the signature Mk II look."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 scout">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/18</span>
                 </div>
-            </div>
 
-            <!-- JAEGER 7 LANCER | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/jaeger_7_lancer.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">5</span>
-                                <span class="reserve">/20</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>JAEGER 7 LANCER</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 20 in Sapienza.
-                        </p>
+                <!-- Jaeger 7 Lancer -->
+                <div class="text versatile_scope piercing marksman">
+                    <h3>Jaeger 7 Lancer</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Sapienza.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A "Lancer" variant of the Jaeger 7. A modern marksman's rifle. Highly accurate and modular, allowing extensive customization."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">5</span><span class="reserve">/20</span>
                 </div>
-            </div>
 
-            <!-- JAEGER 7 COVERT | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/jaeger_7_covert.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/18</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>JAEGER 7 COVERT</h3>
-                        <p class="acq">
-                            Unlocked by completing the Who's Sniping the Sniper? challenge in Apex Predator.
-                        </p>
+                <!-- Jaeger 7 Covert -->
+                <div class="text suppressor subsonic scout">
+                    <h3>Jaeger 7 Covert</h3>
+                    <p class="acq">
+                        Unlocked by completing the Who's Sniping the Sniper? challenge in Apex Predator.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A covert variant of the Jaeger 7. A modern marksman's rifle with custom detailing. Highly accurate and modular, allowing for extensive customization."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 subsonic">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 scout">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/18</span>
                 </div>
-            </div>
 
-            <!-- JAEGER 7 TUATARA | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/jaeger_7_tuatara.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">5</span>
-                                <span class="reserve">/20</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>JAEGER 7 TUATARA</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 20 in Haven Island.
-                        </p>
+                <!-- Jaeger 7 Tuatara -->
+                <div class="text versatile_scope piercing suppressor marksman">
+                    <h3>Jaeger 7 Tuatara</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Haven Island.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A "Tuatara" variant of the Jaeger 7. A modern marksman's rifle. Highly accurate and modular, allowing for extensive customization."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">5</span><span class="reserve">/20</span>
                 </div>
-            </div>
 
-            <!-- JAEGER 7 "TIGER" | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/jaeger_7_tiger.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">8</span>
-                                <span class="reserve">/24</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>JAEGER 7 "TIGER"</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 15 in Bangkok.
-                        </p>
+                <!-- Jaeger 7 "Tiger" -->
+                <div class="text extended_magazine rate_of_fire">
+                    <h3>Jaeger 7 "Tiger"</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 15 in Bangkok.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A unique "Tiger" variant of the Jaeger 7. A modern marksman's rifle with custom detailing. Highly accurate and modular, allowing for extensive customization."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 extended_magazine">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 rate_of_fire">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">8</span><span class="reserve">/24</span>
                 </div>
-            </div>
 
-            <!-- JAEGER 7 GREEN EYE | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/jaeger_7_green_eye.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/18</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>JAEGER 7 GREEN EYE</h3>
-                        <p class="acq">
-                            Unlocked by completing The Envy Contention escalation in The Farewell.
-                        </p>
+                <!-- Jaeger 7 Green Eye -->
+                <div class="text versatile_scope piercing suppressor marksman">
+                    <h3>Jaeger 7 Green Eye</h3>
+                    <p class="acq">
+                        Unlocked by completing The Envy Contention escalation in The Farewell.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A Jaeger 7 Mk II sniper rifle variant featuring a suppressor, a feline-inspired cosmetic mod, and a black and green fragment design. The perfect weapon for hunters who lie in wait and strike with confidence."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/18</span>
                 </div>
-            </div>
 
-            <!-- DRUZHINA 34 | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/druzhina_34.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">8</span>
-                                <span class="reserve">/32</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>DRUZHINA 34</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 20 in Mumbai.
-                        </p>
+                <!-- Druzhina 34 -->
+                <div class="text versatile_scope extended_magazine piercing scout">
+                    <h3>Druzhina 34</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Mumbai.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A modern long-distance sniper rifle. Very effective on all ranges, but has a slow firing rate."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 extended_magazine">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">8</span><span class="reserve">/32</span>
                 </div>
-            </div>
 
-            <!-- DRUZHINA 34 DTI | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/druzhina_34_dti.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">4</span>
-                                <span class="reserve">/16</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>DRUZHINA 34 DTI</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 15 in Dubai.
-                        </p>
+                <!-- Druzhina 34 DRI -->
+                <div class="text versatile_scope piercing">
+                    <h3>Druzhina 34 DTI</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 15 in Dubai.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A DTI variant of the Druzhina 34. A modern long-distance sniper rifle. Very effective at all ranges, with a medium firing rate."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">4</span><span class="reserve">/16</span>
                 </div>
-            </div>
 
-            <!-- DRUZHINA 34 ICA ARCTIC | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/druzhina_34_ica_arctic.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">5</span>
-                                <span class="reserve">/20</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>DRUZHINA 34 ICA ARCTIC</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 20 in Siberia.
-                        </p>
+                <!-- Druzhina 34 ICA Arctic -->
+                <div class="text versatile_scope piercing suppressor">
+                    <h3>Druzhina 34 ICA Arctic</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Siberia.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A unique ICA variant of the Druzhina 34. A modern long-distance sniper rifle. Very effective at all ranges, with a medium firing rate."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">5</span><span class="reserve">/20</span>
                 </div>
-            </div>
 
-            <!-- HACKL LEVIATHAN SNIPER RIFLE COVERT | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/hackl_leviathan_sniper_rifle_covert.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">4</span>
-                                <span class="reserve">/16</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>HACKL LEVIATHAN SNIPER RIFLE COVERT</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 20 in Chongqing.
-                        </p>
+                <!-- Hackl Leviathan Sniper Rifle Covert -->
+                <div class="text extended_scope piercing suppressor subsonic marksman concealable">
+                    <h3>Hackl Leviathan Sniper Rifle Covert</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Chongqing.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A covert variant of the Hackl Leviathan Sniper Rifle. The ICA's latest model of the Leviathan is a modern marksman's rifle. Silenced and deadly."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 extended_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 subsonic">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">4</span><span class="reserve">/16</span>
                 </div>
-            </div>
 
-            <!-- HACKL SNIPER RIFLE COVERT "DUCKY" EDITION | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/hackl_sniper_rifle_covert_ducky_edition.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">4</span>
-                                <span class="reserve">/16</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>HACKL SNIPER RIFLE COVERT "DUCKY" EDITION</h3>
-                        <p class="acq">
-                            Unlocked by completing the Featured Contracts - Track 2, Tier 7 challenge (complete 60 featured contracts on Hitman 3 locations).
-                        </p>
+                <!-- Hackl Sniper Rifle Covert "Ducky" Edition -->
+                <div class="text extended_scope piercing suppressor subsonic marksman concealable">
+                    <h3>Hackl Sniper Rifle Covert "Ducky" Edition</h3>
+                    <p class="acq">
+                        Unlocked by completing the Featured Contracts - Track 2, Tier 7 challenge (complete 60 featured contracts on Hitman 3 locations).
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A covert variant of the Hackl Leviathan Sniper Rifle with a little added flair. Based on the ICA's latest model of the Leviathan, it's as silent to the ear as it is loud to the eye."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 extended_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 subsonic">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">4</span><span class="reserve">/16</span>
                 </div>
-            </div>
 
-            <!-- ICA WOODSMAN RIFLE COVERT | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/ica_woodsman_rifle_covert.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">4</span>
-                                <span class="reserve">/16</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>ICA WOODSMAN RIFLE COVERT</h3>
-                        <p class="acq">
-                            Unlocked by completing 17 Sniper Assassin challenges.
-                        </p>
+                <!-- ICA Woodsman Rifle Covert -->
+                <div class="text versatile_scope piercing suppressor marksman">
+                    <h3>ICA Woodsman Rifle Covert</h3>
+                    <p class="acq">
+                        Unlocked by completing 17 Sniper Assassin challenges.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A covert, ICA variant of the Bartoli Woodsman Hunting Rifle. From Bartoli, makers of the finest hunting gear available, comes the new Bartoli Woodsman Hunting Rifle. The stock is carved from solid walnut; the barrel drilled from the highest-quality metal blend. Comes with a suppressor."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">4</span><span class="reserve">/16</span>
                 </div>
-            </div>
 
-            <!-- BARTOLI WOODSMAN HUNTING RIFLE | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/bartoli_woodsman_hunting_rifle.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">6</span>
-                                <span class="reserve">/18</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>BARTOLI WOODSMAN HUNTING RIFLE</h3>
-                        <p class="acq">
-                            Unlocked after reaching mastery level 20 in Dartmoor.
-                        </p>
+                <!-- Bartoli Woodsman Hunting Rifle -->
+                <div class="text">
+                    <h3>Bartoli Woodsman Hunting Rifle</h3>
+                    <p class="acq">
+                        Unlocked after reaching mastery level 20 in Dartmoor.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "From Bartoli, makers of the finest hunting gear available, comes the new Bartoli Woodsman Hunting Rifle. The stock is carved from solid walnut; the barrel drilled from the highest-quality metal blend."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">6</span><span class="reserve">/18</span>
                 </div>
-            </div>
 
-            <!-- THE GOLDEN DRAGON | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/the_golden_dragon.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">4</span>
-                                <span class="reserve">/16</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>THE GOLDEN DRAGON</h3>
-                        <p class="acq">
-                            Unlocked by completing The Lee Hong Derivation escalation in End of an Era.
-                        </p>
+                <!-- The Golden Dragon -->
+                <div class="text versatile_scope piercing suppressor marksman">
+                    <h3>The Golden Dragon</h3>
+                    <p class="acq">
+                        Unlocked by completing The Lee Hong Derivation escalation in End of an Era.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A custom-built Bartoli Woodsman Hunting Rifle with a delicately ornamented barrel; a stock built entirely from red-tinted cherry with a beautiful gold trim; and a Chinese-style golden dragon-headed muzzle brake."
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">4</span><span class="reserve">/16</span>
                 </div>
-            </div>
 
-            <!-- THE MAJESTIC | DONE R -->
-            <div class="w">
-                <div class="content">
-                    <div class="img" style="background-image: url(css/resources/weapons/snipers/the_majestic.png);">
-                        <div class="prevButton"><i class="fas fa-angle-left fa-2x"></i></div>
-                        <div class="nextButton last"><i class="fas fa-angle-right fa-2x"></i></div>
-                        <div class="perksTooltip">
-                            <h4></h4>
-                            <span></span>
-                        </div>
-                        <div class="wAmmo">
-                            <div class="wAmmoFlexContainer">
-                                <span style="margin-bottom: 2px; margin-right: 10px;">Cap.:</span>
-                                <span class="magazine">4</span>
-                                <span class="reserve">/16</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h3>THE MAJESTIC</h3>
-                        <p class="acq">
-                            Unlocked by completing The Pride Profusion escalation in End of an Era.
-                        </p>
+                <!-- The Majestic -->
+                <div class="text versatile_scope piercing suppressor marksman last">
+                    <h3>The Majestic</h3>
+                    <p class="acq">
+                        Unlocked by completing The Pride Profusion escalation in End of an Era.
+                    </p>
+                    <div class="descFlexWrapper">
                         <p class="desc">
                             "A unique and magnificently designed sniper rifle. Be majestic like the Peacock and take your shot: You won't miss. But would that be too easy?"
                         </p>
                     </div>
-                    <div class="perksFlexContainer">
-                        <div class="perks">
-                            <div class="perk perk1 versatile_scope">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk2 piercing">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk3 suppressor">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk4 marksman">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk5">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                            <div class="perk perk6">
-                                <div class="perkIcon"></div>
-                                <div class="perkInfo">
-                                    <h4 class="perkTitle"></h4>
-                                    <p class="perkDesc"></p>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
+                    <span class="magazine">4</span><span class="reserve">/16</span>
                 </div>
+
             </div>
+
         </div>
     </main>
 

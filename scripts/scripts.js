@@ -1,12 +1,71 @@
-/* ----- Abrir y cerrar weapon selector con click ----- */
+/* ----- Cambiar imagen del botón para ir al menú al hacerle hover ----- */
+
+const menuIcon = document.getElementById('menuIcon');
+
+menuIcon.onmouseover = function() {
+    menuIcon.setAttribute('src', 'css/resources/icons/return_to_menu_hover.svg');
+}
+menuIcon.onmouseout = function() {
+    menuIcon.setAttribute('src', 'css/resources/icons/return_to_menu.svg');
+}
+
+/* ----- Cambiar imagen del botón para cerrar el wInfo al hacerle hover ----- */
+
+const closeIcon = document.getElementById('closeIcon');
+
+closeIcon.onmouseover = function() {
+    closeIcon.setAttribute('src', 'css/resources/icons/cross_black.svg');
+}
+closeIcon.onmouseout = function() {
+    closeIcon.setAttribute('src', 'css/resources/icons/cross.svg');
+}
+
+/* ----- Cerrar el wInfo con el closeButton ----- */
+
+closeIcon.addEventListener('click', function() {
+    
+    wButtonSelected = -1;
+    wButton.forEach(item => {
+
+        item.classList.remove('selected');
+
+    })
+    wInfo.classList.remove("open");
+
+})
+
+/* ----- Abrir y cerrar weapon selector con click (y cambiar el color de la flechita!) ----- */
 
 const wSel = document.getElementById('wSel');
 const wSelButton = document.getElementById('wSelButton');
+const wSelArrow = document.getElementById('wSelArrow');
+
+function wSelArrowBlack(){
+    wSelArrow.setAttribute('src', 'css/resources/icons/arrow_black.svg');
+    wSelArrow.setAttribute('alt', 'Close weapon selector');
+}
+function wSelArrowWhite(){
+    wSelArrow.setAttribute('src', 'css/resources/icons/arrow.svg');
+    wSelArrow.setAttribute('alt', 'Open weapon selector');
+}
 
 wSelButton.onclick = function() {
 
-    wSel.classList.toggle("open");
-    wSelButton.classList.toggle("open");
+    if(wSel.classList.contains("open")){
+
+      wSel.classList.remove("open");
+      wSelButton.classList.remove("open");
+      wSelArrowWhite();
+
+    }
+
+    else{
+
+      wSel.classList.add("open");
+      wSelButton.classList.add("open");
+      wSelArrowBlack()
+
+    }
 
 }
 
@@ -18,6 +77,7 @@ document.addEventListener('click', function clickOutsideWSelMenu(event) {
 
       wSel.classList.remove("open");
       wSelButton.classList.remove("open");
+      wSelArrowWhite();
 
     }
 
@@ -26,27 +86,40 @@ document.addEventListener('click', function clickOutsideWSelMenu(event) {
 /* ----- Seleccionar un botón específico en el weapon selector ----- */
 
 const wButton = Array.from(document.querySelectorAll('.category button'));
-const weapons = Array.from(document.querySelectorAll('.w'));
-var wButtonSelected = [-1]; //Array donde guardo el index del button seleccionado (-1 significa que no hay ninguno seleccionado!)
+const wInfo = document.getElementById('wInfo');
+const weapons = Array.from(document.querySelectorAll('.text'));
+var wButtonSelected = -1; //Array donde guardo el index del button seleccionado (-1 significa que no hay ninguno seleccionado!)
+
+var bgImgURL = ''
 
 wButton.forEach(item => {
 
   item.addEventListener('click', event => {
 
-    if((event.target).classList.contains("selected")) {
+    wSelArrowWhite(); // Cambio el color de la flechita a blanco :)
 
-      (event.target).classList.remove("selected");      //Para poder toggle-ear el selected de un mismo botón
+    if((event.target).classList.contains("selected")) {   // Si el botón clickeado es el ya seleccionado...
 
-      wButtonSelected.splice(0, 1, -1);                 //Como no hay ningún button seleccionado, vuelvo a poner el array wButtonSelected en -1
+      (event.target).classList.remove("selected");          // Para poder toggle-ear el selected de un mismo botón
+
+      wButtonSelected = -1;                     // Como no hay ningún button seleccionado, vuelvo a poner el array wButtonSelected en -1
+
+      wInfo.classList.remove('open');
+
+      wSel.classList.remove("open");
+      wSelButton.classList.remove("open");
+      wSelArrowWhite();
        
     }
-    else {
+    else {                                                                // Si el botón clickeado NO es el ya seleccionado...
 
       wButton.forEach(item => { item.classList.remove("selected") });       //Le saco el selected a todos los buttons en .category
       
       (event.target).classList.add("selected");                             //Le pongo el selected al button clickeado
 
-      wButtonSelected.splice(0, 1, wButton.indexOf(event.target));          //Pongo el array wButtonSelected en el valor del index asociado al botón seleccionado
+      wButtonSelected = wButton.indexOf(event.target);          //Pongo el array wButtonSelected en el valor del index asociado al botón seleccionado
+
+      wInfo.classList.add('open');
 
     }
 
@@ -54,24 +127,59 @@ wButton.forEach(item => {
 
     weapons.forEach(item => {
 
-      if(wButtonSelected[0] === weapons.indexOf(item)) {
+      item.removeAttribute('id');
 
-        item.classList.add("selected");
+      if(wButtonSelected === weapons.indexOf(item)) {
 
-      }
-
-      else {
-
-        item.classList.remove("selected");
+        item.setAttribute('id', "selected");
 
       }
 
     })
 
+    /* ----- Cambiar la imagen del arma a la correspondiente ----- */
+
+    bgImgURL = 'css/resources/weapons/'  +  document.querySelector('h1').innerHTML.toLowerCase().replaceAll(' ', '_')  +  '/'  +  document.getElementById('selected').querySelector('h3').innerHTML.toLowerCase().replaceAll(' ', '_').replaceAll('ii', '2').replaceAll('"', '').replaceAll('/', '').replaceAll("'", '')  +  '.png'
+    document.querySelector('#imgContainer img').setAttribute('src', bgImgURL)
+
+    /* ----- Chequear si el arma es la primera o la última para el prevButton o el nextButton ----- */
+
+    if (wButtonSelected !== 0) {
+        
+        prevButton.classList.remove('first')
+        prevButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow.svg')
+
+    }
+    else {
+       
+        prevButton.classList.add('first')
+        prevButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow_black.svg')
+
+    }
+    
+    if(wButtonSelected < wButton.length - 1) {
+        
+        nextButton.classList.remove('last')
+        nextButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow.svg')   
+
+    }
+    else{
+
+        nextButton.classList.add('last')
+        nextButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow_black.svg')
+
+    }
+
     /* ----- Cerrar selector al clickear un botón ----- */
 
     wSel.classList.remove("open");
     wSelButton.classList.remove("open");
+
+
+
+    changePerks();   
+    changeExtras();
+    changeAmmo();
 
   })
 
@@ -79,608 +187,316 @@ wButton.forEach(item => {
 
 /* ----- Prev/Next weapon ----- */
 
-const prevButton = Array.from(document.getElementsByClassName('prevButton'));
-const nextButton = Array.from(document.getElementsByClassName('nextButton'));
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
 
-prevButton.forEach(item => {
+prevButton.addEventListener('click', event => {                           // Al hacer click en un prevButton cualquiera
 
-    item.addEventListener('click', event => {                           // Al hacer click en un prevButton cualquiera
+    if(wButtonSelected === 0){                              // Si la ficha de arma actualmente activa es la primera no hago nada
 
-        if(wButtonSelected[0] - 1 === -1){                              // Si la ficha de arma actualmente activa es la primera no hago nada
+    }
+    else{
+
+        wButtonSelected = wButtonSelected - 1;       // Si la ficha de arma actualmente activa NO es la primera, cambio la ficha activa en el array de wButtonSelected a la anterior
+
+    }
+
+    wButton.forEach(item => {                                       // Le quito el efecto de seleccionado al botón que lo estaba antes de tocar al prevButton, se lo pongo en su lugar al botón que ahora indica el array de wButtonSelected
+
+        if(wButtonSelected === wButton.indexOf(item)) {
+
+            item.classList.add('selected');
 
         }
         else{
 
-            wButtonSelected.splice(0, 1, wButtonSelected[0] - 1);       // Si la ficha de arma actualmente activa NO es la primera, cambio la ficha activa en el array de wButtonSelected a la anterior
+            item.classList.remove('selected');
 
         }
 
-        wButton.forEach(item => {                                       // Le quito el efecto de seleccionado al botón que lo estaba antes de tocar al prevButton, se lo pongo en su lugar al botón que ahora indica el array de wButtonSelected
-
-            if(wButtonSelected[0] === wButton.indexOf(item)) {
-
-                item.classList.add('selected');
-
-            }
-            else{
-
-                item.classList.remove('selected');
-
-            }
-
-        })
-
-        weapons.forEach(item => {                                       // Mismo procedimiento que antes para mostrar la ficha de arma que indica el array de wButtonSelected
-
-            if(wButtonSelected[0] === weapons.indexOf(item)) {
-      
-              item.classList.add("selected");
-      
-            }
-      
-            else {
-      
-              item.classList.remove("selected");
-      
-            }
-      
-          })
-
     })
+
+    weapons.forEach(item => {                                       // Mismo procedimiento que antes para mostrar la ficha de arma que indica el array de wButtonSelected
+
+        item.removeAttribute('id');
+
+        if(wButtonSelected === weapons.indexOf(item)) {
+
+            item.setAttribute('id', "selected");
+
+        }
+    
+    })
+
+    bgImgURL = 'css/resources/weapons/'  +  document.querySelector('h1').innerHTML.toLowerCase().replaceAll(' ', '_')  +  '/'  +  document.getElementById('selected').querySelector('h3').innerHTML.toLowerCase().replaceAll(' ', '_').replaceAll('ii', '2').replaceAll('"', '').replaceAll('/', '').replaceAll("'", '')  +  '.png'
+    document.querySelector('#imgContainer img').setAttribute('src', bgImgURL)
+
+    /* ----- Chequear si el arma es la primera o la última para el prevButton o el nextButton ----- */
+
+    if (wButtonSelected !== 0) {
+    
+        prevButton.classList.remove('first')
+        prevButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow.svg')
+
+    }
+    else {
+        
+        prevButton.classList.add('first')
+        prevButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow_black.svg')
+
+    }
+    
+    if(wButtonSelected < wButton.length - 1) {
+        
+        nextButton.classList.remove('last')
+        nextButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow.svg')   
+
+    }
+    else{
+
+        nextButton.classList.add('last')
+        nextButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow_black.svg')
+
+    }
+
+    changePerks();
+    changeExtras();
+    changeAmmo();
 
 })
 
 
 
+nextButton.addEventListener('click', event => {
 
+    if(wButtonSelected >= wButton.length - 1){ 
 
-nextButton.forEach(item => {
+    } //Ej: en snipers, hay 22 armas, y por ende 22 botones. Entonces, wButton tiene length de 22. Cuando estoy en la última arma, el wButtonSelected está en 21, y entonces sólo cuando esa ficha está abierta el wButtonSelected de 21 va a ser mayor o igual (va a ser igual) que el wButton.length de 22-1, y el botón para pasar a la siguiente arma va a dejar de andar
+    else{
 
-    item.addEventListener('click', event => {
+        wButtonSelected = wButtonSelected + 1;
 
-        if(wButtonSelected[0] >= wButton.length - 1){ 
+    } //Si no pasa lo explicado en el ejemplo anterior, significa que no estoy en la última ficha, y entonces aumento el wButtonSelected en 1 para luego seleccionar la ficha siguiente
 
-        } //Ej: en snipers, hay 22 armas, y por ende 22 botones. Entonces, wButton tiene length de 22. Cuando estoy en la última arma, el wButtonSelected está en 21, y entonces sólo cuando esa ficha está abierta el wButtonSelected[0] de 21 va a ser mayor o igual (va a ser igual) que el wButton.length de 22-1, y el botón para pasar a la siguiente arma va a dejar de andar
+    wButton.forEach(item => {           // Marco como seleccionado al botón que me indica el valor del wButtonSelected, haya cambiado o no
+
+        if(wButtonSelected === wButton.indexOf(item)) {
+
+            item.classList.add('selected');
+
+        }
         else{
 
-            wButtonSelected.splice(0, 1, wButtonSelected[0] + 1);
+            item.classList.remove('selected');
 
-        } //Si no pasa lo explicado en el ejemplo anterior, significa que no estoy en la última ficha, y entonces aumento el wButtonSelected[0] en 1 para luego seleccionar la ficha siguiente
-
-        wButton.forEach(item => {           // Marco como seleccionado al botón que me indica el valor del wButtonSelected[0], haya cambiado o no
-
-            if(wButtonSelected[0] === wButton.indexOf(item)) {
-
-                item.classList.add('selected');
-
-            }
-            else{
-
-                item.classList.remove('selected');
-
-            }
-
-        })
-
-        weapons.forEach(item => {           // Muestro la info asociada al botón seleccionado, igual que como cuando elijo haciendo click en los botones "wButton"
-
-            if(wButtonSelected[0] === weapons.indexOf(item)) {
-      
-              item.classList.add("selected");
-      
-            }
-      
-            else {
-      
-              item.classList.remove("selected");
-      
-            }
-      
-          })
+        }
 
     })
 
-})
+    weapons.forEach(item => {           // Muestro la info asociada al botón seleccionado, igual que como cuando elijo haciendo click en los botones "wButton"
 
-const versatile_scopeIcon = document.querySelectorAll(".versatile_scope .perkIcon");        // Listas de nodos con todos los iconos asociados a cada respectiva perk
-const suppressorIcon = document.querySelectorAll(".suppressor .perkIcon");
-const marksmanIcon = document.querySelectorAll(".marksman .perkIcon");
-const extended_scopeIcon = document.querySelectorAll(".extended_scope .perkIcon");
-const subsonicIcon = document.querySelectorAll(".subsonic .perkIcon");
-const scoutIcon = document.querySelectorAll(".scout .perkIcon");
-const variable_scopeIcon = document.querySelectorAll(".variable_scope .perkIcon");
-const piercingIcon = document.querySelectorAll(".piercing .perkIcon");
-const extended_magazineIcon = document.querySelectorAll(".extended_magazine .perkIcon");
-const rate_of_fireIcon = document.querySelectorAll(".rate_of_fire .perkIcon");
+        item.removeAttribute('id');
 
-/* ----- Asignación de perks al cargar la página -----*/
-// Acá sólo el texto, ya que de esta forma me ahorro tener que cargarlo en cada elemento para cada arma. Las imágenes están en css ya que con asignar la clase al elemento alcanza!
+        if(wButtonSelected === weapons.indexOf(item)) {
 
-window.addEventListener('DOMContentLoaded', function() {
+            item.setAttribute('id', "selected");
 
-  /* Versatile scope */
-  x = document.querySelectorAll(".versatile_scope .perkInfo h4");   // Selecciono todos los h1 asociados a una perk de versatile scope
+        }
+    
+    })
 
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Versatile Scope";                             // Les pongo como contenido el nombre de la perk
-      }
+    bgImgURL = 'css/resources/weapons/'  +  document.querySelector('h1').innerHTML.toLowerCase().replaceAll(' ', '_')  +  '/'  +  document.getElementById('selected').querySelector('h3').innerHTML.toLowerCase().replaceAll(' ', '_').replaceAll('ii', '2').replaceAll('"', '').replaceAll('/', '').replaceAll("'", '')  +  '.png'
+    document.querySelector('#imgContainer img').setAttribute('src', bgImgURL)
 
-  x = document.querySelectorAll(".versatile_scope .perkInfo p");    // Selecciono ahora todos los p asociados al mismo tipo de perk
+    /* ----- Chequear si el arma es la primera o la última para el prevButton o el nextButton ----- */
 
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Three levels of zoom.";;                      // Les pongo como contenido la descripción de la perk
-      }
+    if (wButtonSelected !== 0) {
+    
+        prevButton.classList.remove('first')
+        prevButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow.svg')
 
+    }
+    else {
+        
+        prevButton.classList.add('first')
+        prevButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow_black.svg')
 
-  /* Suppressor */
-  x = document.querySelectorAll(".suppressor .perkInfo h4");
+    }
+      
+    if(wButtonSelected < wButton.length - 1) {
+        
+        nextButton.classList.remove('last')
+        nextButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow.svg')   
 
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Suppressor";
-      }
+    }
+    else{
 
-  x = document.querySelectorAll(".suppressor .perkInfo p");
+        nextButton.classList.add('last')
+        nextButton.querySelector('img').setAttribute('src', 'css/resources/icons/arrow_black.svg')
 
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Quiet, reduced range.";;
-      }
+    }
 
-
-  /* Marksman */
-  x = document.querySelectorAll(".marksman .perkInfo h4");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Marksman";
-      }
-
-  x = document.querySelectorAll(".marksman .perkInfo p");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Improve your aim by slowing down time.";;
-      }
-
-
-  /* Extended scope */
-  x = document.querySelectorAll(".extended_scope .perkInfo h4");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Extended Scope";
-      }
-
-  x = document.querySelectorAll(".extended_scope .perkInfo p");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Four levels of zoom.";;
-      }
-
-
-  /* Subsonic */
-  x = document.querySelectorAll(".subsonic .perkInfo h4");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Subsonic";
-      }
-
-  x = document.querySelectorAll(".subsonic .perkInfo p");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Very quiet, reduced damage.";;
-      }
-
-
-  /* Scout */
-  x = document.querySelectorAll(".scout .perkInfo h4");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Scout";
-      }
-
-  x = document.querySelectorAll(".scout .perkInfo p");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Can be aimed quickly, increased rate of fire.";;
-      }
-
-
-  /* Variable Scope */
-  x = document.querySelectorAll(".variable_scope .perkInfo h4");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Variable Scope";
-      }
-
-  x = document.querySelectorAll(".variable_scope .perkInfo p");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Two levels of zoom.";;
-      }
-
-
-  /* Piercing */
-  x = document.querySelectorAll(".piercing .perkInfo h4");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Piercing";
-      }
-
-  x = document.querySelectorAll(".piercing .perkInfo p");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Rounds fired will penetrate bodies.";;
-      }
-
-
-  /* Extended magazine */
-  x = document.querySelectorAll(".extended_magazine .perkInfo h4");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Extended Magazine";
-      }
-
-  x = document.querySelectorAll(".extended_magazine .perkInfo p");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Extra ammunition in the magazine, based on weapon type.";;
-      }
-
-
-  /* Rate of fire */
-  x = document.querySelectorAll(".rate_of_fire .perkInfo h4");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Rate of Fire";
-      }
-
-  x = document.querySelectorAll(".rate_of_fire .perkInfo p");
-
-      for(var i = 0; i < x.length; i++){
-      x[i].innerText="Increased rate of fire.";;
-      }
+    changePerks();
+    changeExtras();
+    changeAmmo();
 
 })
 
+const versatile_scope = ['Versatile Scope', 'Three levels of zoom.', 'css/resources/icons/perks/versatile_scope.svg'];
+const suppressor = ['Suppressor', 'Quiet, reduced range.', 'css/resources/icons/perks/suppressor.svg'];
+const marksman = ['Marksman', 'Improve your aim by slowing down time.', 'css/resources/icons/perks/marksman.svg'];
+const extended_scope = ['Extended Scope', 'Four levels of zoom.', 'css/resources/icons/perks/extended_scope.svg'];
+const subsonic = ['Subsonic', 'Very quiet, reduced damage.', 'css/resources/icons/perks/subsonic.svg'];
+const scout = ['Scout', 'Can be aimed quickly, increased rate of fire.', 'css/resources/icons/perks/scout.svg'];
+const variable_scope = ['Variable Scope', 'Two levels of zoom.', 'css/resources/icons/perks/variable_scope.svg'];
+const piercing = ['Piercing', 'Rounds fired will penetrate bodies.', 'css/resources/icons/perks/piercing.svg'];
+const extended_magazine = ['Extended Magazine', 'Extra ammunition in the magazine, based on weapon type.', 'css/resources/icons/perks/extended_magazine.svg'];
+const rate_of_fire = ['Rate of Fire', 'Increased rate of fire.', 'css/resources/icons/perks/rate_of_fire.svg'];
+const damage = ['Damage', 'Increased damage across all ranges.', 'css/resources/icons/perks/damage.svg'];
+const full_auto = ['Full Auto', 'Fully automated firing.', 'css/resources/icons/perks/full_auto.svg'];
+const steady_aim = ['Steady Aim', 'Improved accuracy while aiming.', 'css/resources/icons/perks/steady_aim.svg'];
+
+const perks = document.querySelectorAll('.perk');
+const allPerksNames = ['versatile_scope', 'suppressor', 'marksman', 'extended_scope', 'subsonic', 'scout', 'variable_scope', 'piercing', 'extended_magazine', 'rate_of_fire', 'damage', 'full_auto', 'steady_aim'];
+const allPerksArrays = [versatile_scope, suppressor, marksman, extended_scope, subsonic, scout, variable_scope, piercing, extended_magazine, rate_of_fire, damage, full_auto, steady_aim];
+
+const concealable = ['Quick conceal', 'css/resources/icons/extras/concealable.svg'];
+const opens_doors = ['Opens doors', 'css/resources/icons/extras/opens_doors.svg'];
+const frisk_hidden = ['Frisk undetected', 'css/resources/icons/extras/frisk_hidden.svg'];
+const emeticP = ['Emetic, silenced', 'css/resources/icons/extras/poison.svg'];
+const sedativeP = ['Sedative, silenced', 'css/resources/icons/extras/poison.svg'];
+const stunning = ['Stunning, silenced', 'css/resources/icons/extras/stunning.svg'];
+
+const allExtrasNames = ['concealable', 'opens_doors', 'frisk_hidden', 'emeticP', 'sedativeP', 'stunning'];
+const allExtrasArrays = [concealable, opens_doors, frisk_hidden, emeticP, sedativeP, stunning];
+
+const none = ['', 'css/resources/icons/perks/none.svg'];
+
+var changePerks = function() {
+    
+    for(i = 0; i < perks.length; i++){
+
+        perks[i].querySelector('.perkTitle').innerText = none[0];
+
+        perks[i].querySelector('.perkDesc').innerText = none[0];
+        
+        perks[i].querySelector('.perkIcon').setAttribute('src', none[1]);
+        perks[i].querySelector('.perkIcon').setAttribute('alt', none[0]);
+        perks[i].querySelector('.perkIcon').style.border = 'none'
+        
+    }
+
+    let currentPerk = 0;
+
+    for(i = 0; i < allPerksNames.length; i++){
+
+        if(document.getElementById('selected').classList.contains(allPerksNames[i])) {
+
+            perks[currentPerk].querySelector('.perkTitle').innerText = allPerksArrays[i][0];
+
+            perks[currentPerk].querySelector('.perkDesc').innerText = allPerksArrays[i][1];
+        
+            perks[currentPerk].querySelector('.perkIcon').setAttribute('src', allPerksArrays[i][2]);
+            perks[currentPerk].querySelector('.perkIcon').setAttribute('alt', allPerksArrays[i][0]);
+
+            perks[currentPerk].querySelector('.perkIcon').style.border = '1px solid red'
+
+            currentPerk++;
+    
+        }
+        
+    }
+
+}
+
+var changeExtras = function() {
+
+    document.querySelector('#extraIndicator span').innerText = none[0];
+
+    document.querySelector('#extraIndicator img').setAttribute('src', none[1]);
+    document.querySelector('#extraIndicator img').setAttribute('alt', none[0]);
+
+    for(i = 0; i < allExtrasNames.length; i++){
+
+        if(document.getElementById('selected').classList.contains(allExtrasNames[i])) {
+
+            document.querySelector('#extraIndicator span').innerText = allExtrasArrays[i][0];
+
+            document.querySelector('#extraIndicator img').setAttribute('src', allExtrasArrays[i][1]);
+            document.querySelector('#extraIndicator img').setAttribute('alt', allExtrasArrays[i][0]);
+
+        }
+
+    }
+
+}
+
+var changeAmmo = function() {
+
+    document.getElementById('magazine').innerText = document.querySelector('#selected .magazine').innerText;
+    document.getElementById('reserve').innerText = document.querySelector('#selected .reserve').innerText;
+
+}
 
 /* ----- Tooltip al hoverear una perk ----- */
 
-const perksTooltipsTitle = document.querySelectorAll(".perksTooltip h4");
-const perksTooltipsDesc = document.querySelectorAll(".perksTooltip span");
+const perkIcons = document.querySelectorAll('.perkIcon');
+const perksTooltipTitle = document.querySelector('#perksTooltip h4');
+const perksTooltipDesc = document.querySelector('#perksTooltip span');
 
-/* Versatile scope */
+for(i = 0; i < perkIcons.length; i++){
 
-versatile_scopeIcon.forEach(item => {
+    perkIcons[i].addEventListener('mouseover', function(){
 
-    item.addEventListener('mouseover', function() {                                         // Detecto el mouseover sobre cualquier icono de versatile scope
+        var hoveredPerkTitle = this.parentNode.querySelector('.perkInfo .perkTitle').innerText
+        var hoveredPerkDesc = this.parentNode.querySelector('.perkInfo .perkDesc').innerText
 
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Versatile Scope";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Three levels of zoom.";            // Le pongo el título y descripción acordes a la perk hovereada a específicamente el tooltip incluido en la ficha del arma abierta actualmente
+        perksTooltipTitle.innerText = hoveredPerkTitle;
+        perksTooltipDesc.innerText = hoveredPerkDesc;                         // Vacío el tooltip de la ficha del arma actualmente abierta
         
         /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')                              // Cambio el overflow a scroll por un instante para poder detectar si hay overflow       
+        perksTooltipDesc.setAttribute('style', 'overflow-x: scroll;')                              // Cambio el overflow a scroll por un instante para poder detectar si hay overflow       
 
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {     // Detecto si hay overflow
+        if(perksTooltipDesc.clientWidth < perksTooltipDesc.scrollWidth) {     // Detecto si hay overflow
 
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');                                            // Sólo si hay overflow, hago que el tooltip sea animado
+             perksTooltipDesc.classList.add('animated');                                            // Sólo si hay overflow, hago que el tooltip sea animado
 
         }
 
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')                             // Vuelvo a poner el overflow en visible, que era el estado original
+        perksTooltipDesc.setAttribute('style', 'overflow-x: visible;')                             // Vuelvo a poner el overflow en visible, que era el estado original
 
     })
 
-    item.addEventListener('mouseout', function() {                                  // Cuando se termina el mouseover aka dejo de hoverear el icono de la perk
+}
 
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";                         // Vacío el tooltip de la ficha del arma actualmente abierta
+for(i = 0; i < perkIcons.length; i++){
 
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');         // Quito la animación del tooltip; si no la tenía, esto no afecta en nada
-        
-    })
+    perkIcons[i].addEventListener('mouseout', function() {                                  // Cuando se termina el mouseover aka dejo de hoverear el icono de la perk
 
-})
-
-/* Suppressor */
-
-suppressorIcon.forEach(item => {
-
-    item.addEventListener('mouseover', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Suppressor";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Quiet, reduced range.";
-        
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
-
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
-
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
-
-        }
-
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
-
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-        
-    })
-
-})
-
-/* Marksman */
-
-marksmanIcon.forEach(item => {
-
-    item.addEventListener('mouseover', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Marksman";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Improve your aim by slowing down time.";
-
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
-
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
-
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
-
-        }
-
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
-
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-        
-    })
-
-})
-
-/* Extended scope */
-
-extended_scopeIcon.forEach(item => {
-
-    item.addEventListener('mouseover', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Extended Scope";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Four levels of zoom.";
-
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
-
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
-
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
-
-        }
-
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
-
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-        
-    })
-
-})
-
-/* Subsonic */
-
-subsonicIcon.forEach(item => {
-
-    item.addEventListener('mouseover', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Subsonic";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Very quiet, reduced damage.";
- 
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
-
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
-
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
-
-        }
-
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
-
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-        
-    })
-
-})
-
-/* Scout */
-
-scoutIcon.forEach(item => {
-
-    item.addEventListener('mouseover', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Scout";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Can be aimed quickly, increased rate of fire.";
-
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
-
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
-
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
-
-        }
-
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
-
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-
-    })
-
-})
-
-/* Variable scope */
-
-variable_scopeIcon.forEach(item => {
-
-    item.addEventListener('mouseover', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Variable Scope";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Two levels of zoom.";
-        
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
-
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
-
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
-
-        }
-
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
+        perksTooltipTitle.innerText = "";
+        perksTooltipDesc.innerText = "";                         // Vacío el tooltip de la ficha del arma actualmente abierta
         
         /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-
+        perksTooltipDesc.classList.remove('animated');         // Quito la animación del tooltip; si no la tenía, esto no afecta en nada
+                
     })
 
-})
+}
 
-/* Piercing */
+/* ----- Preloadear las imágenes de las armas ----- */
 
-piercingIcon.forEach(item => {
+function preloadImage(url){
 
-    item.addEventListener('mouseover', function() {
+    var img = new Image();
+    img.src=url;
 
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Piercing";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Rounds fired will penetrate bodies.";
-        
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
+}
 
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
+preloadAuxiliarArray = Array(document.querySelectorAll('.text h3').length);
 
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
+for (i = 0; i < preloadAuxiliarArray.length; i++) {
 
-        }
+    preloadAuxiliarArray[i] = document.querySelectorAll('.text h3')[i].innerText.toLowerCase().replaceAll(' ', '_').replaceAll('ii', '2').replaceAll('"', '').replaceAll('/', '').replaceAll("'", '')
+    preloadImage('css/resources/weapons/'  +  document.querySelector('h1').innerHTML.toLowerCase().replaceAll(' ', '_')  +  '/'  +  preloadAuxiliarArray[i]  +  '.png')
 
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
-
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-
-    })
-
-})
-
-/* Extended magazine */
-
-extended_magazineIcon.forEach(item => {
-
-    item.addEventListener('mouseover', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Extended Magazine";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Extra ammunition in the magazine, based on weapon type.";
-        
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
-
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
-
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
-
-        }
-
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
-
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-        
-    })
-
-})
-
-/* Rate of fire */
-
-rate_of_fireIcon.forEach(item => {
-
-    item.addEventListener('mouseover', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="Rate of Fire";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="Increased rate of fire.";
-        
-        /* Animación cuando hay overflow */
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: scroll;')
-
-        if(perksTooltipsDesc[wButtonSelected[0]].clientWidth < perksTooltipsDesc[wButtonSelected[0]].scrollWidth) {
-
-            perksTooltipsDesc[wButtonSelected[0]].classList.add('animated');
-
-        }
-
-        perksTooltipsDesc[wButtonSelected[0]].setAttribute('style', 'overflow-x: visible;')
-
-    })
-
-    item.addEventListener('mouseout', function() {
-
-        perksTooltipsTitle[wButtonSelected[0]].innerText="";
-        perksTooltipsDesc[wButtonSelected[0]].innerText="";
-
-        /* Quito la animación */
-        perksTooltipsDesc[wButtonSelected[0]].classList.remove('animated');
-        
-    })
-
-})
+}
