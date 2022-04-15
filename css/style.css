@@ -171,6 +171,8 @@ img{
 header{
 
     background-color: black;
+    
+    position: sticky;
 
     height: 60px;
     
